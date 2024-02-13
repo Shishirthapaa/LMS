@@ -1,0 +1,172 @@
+.regtop{
+    display : flex;
+    align-items: left;
+    padding:0 1px;
+    width: 100%;
+    height:14%;
+    position: fixed;
+    z-index: 9999;
+
+}
+.logoreg{
+    margin-top: -0.3rem;
+    height:148px;
+    width:322px;
+    align-items: left;
+    margin-left:25px;
+    position: fixed;
+}
+.regisall{
+    width: 800px;
+    height:650px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin-top:4rem;
+    margin-left: 25%;
+    position: fixed;
+    border-radius: 20px;
+}
+
+.signhead{
+    margin-top: 9px;
+}
+.signalltop{
+    margin-top: 15px;
+}
+#head_er{
+    font-size: 40px;
+    font-weight: 600;
+}
+#alreadyacclog{
+    font-size: 18px;
+    padding-top: 10px;
+}
+.loglinks{
+    text-decoration: none;
+}
+#loglink_l{
+    color:#7E30E1;
+    text-decoration: none;
+    font-size:18px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+.signuformm{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding-top: 5%;
+}
+#la1{
+    margin-top: 0px;
+    color: #7E30E1;
+    width: 100%;
+    margin-left: -26.3rem;
+    padding: 8px;
+    font-size: 18px;
+}
+#la2{
+    margin-top: 10px;
+    color: #7E30E1;
+    width: 100%;
+    margin-left: -29rem;
+    padding: 8px;
+    font-size: 18px;
+}
+#la3{
+    margin-top: 10px;
+    width: 100%;
+    margin-left: -26.5rem;
+    color: #7E30E1;
+    padding: 8px;
+    font-size: 18px;
+
+}
+#la4{
+    margin-top: 10px;
+    color: #7E30E1;
+    width: 100%;
+    margin-left: -21.9rem;
+    padding: 8px;
+    font-size: 18px;
+}
+#usernamesignbox{
+    width: 65%;
+    height: 40px;
+    margin-left:0.5rem ;
+    border-radius: 5px;
+    background-color: #EDEDED;
+    box-shadow: 0 4px 8px 0 rgba(60, 60, 60, 0.2);
+    transition: 0.3s;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    margin-top: -1px;
+}
+#emailsignbox{
+    width: 65%;
+    margin-left:0.5rem ;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #EDEDED;
+    box-shadow: 0 4px 8px 0 rgba(60, 60, 60, 0.2);
+    transition: 0.3s;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    margin-top: -1px;
+    
+}
+#passsignbox{
+    width: 65%;
+    height: 40px;
+    margin-left:0.5rem ;
+    border-radius: 5px;
+    background-color: #EDEDED;
+    box-shadow: 0 4px 8px 0 rgba(60, 60, 60, 0.2);
+    transition: 0.3s;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    margin-top: -1px;
+}
+#conpasssignbox{
+    width: 65%;
+    height: 40px;
+    margin-left:0.5rem ;
+    border-radius: 5px;
+    background-color: #EDEDED;
+    box-shadow: 0 4px 8px 0 rgba(60, 60, 60, 0.2);
+    transition: 0.3s;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    margin-top: -1px;
+}
+#usernamesignbox:hover, #emailsignbox:hover, #passsignbox:hover, #conpasssignbox:hover{
+    box-shadow: 0 0 0 2px #965de0;
+  }
+
+  #usernamesignbox.selected, #emailsignbox.selected, #passsignbox.selected, #conpasssignbox.selected{
+    box-shadow: 0 0 0 2px #965de0;
+  }
+#buttonsign{
+    color:white;
+    background-color: #7E30E1;
+    width: 13rem;
+    height:2.5rem;
+    margin-top: 3rem;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.2s ease-in-out;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 20rem;
+
+}
+#buttonsign:hover{
+    background-color:#bf93f4;
+    color:#7E30E1;
+}

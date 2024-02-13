@@ -1,0 +1,117 @@
+.homeall{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    padding: 20px;
+}
+.homeleftall{
+    margin-top: 15%;
+    margin-left: 0px;
+    padding-left: 8%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.homeleft{
+    margin-left: 0px;
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+}
+.h1a{
+    color: #7E30E1;
+    font-size: 49px;
+}
+.h1b{
+   color: #7E30E1;
+   font-size: 49px;
+   margin-top: -0.7rem;
+}
+.h3a{
+    margin-top: 2.5rem;
+    color: #7E30E1;
+    font-size: 20px;
+}
+.h3b{
+    color: #7E30E1;
+    font-size: 20px;
+}
+.startbut{
+    margin-top: 4rem;
+    margin-left: 3.9rem;
+    padding:0.5rem 1.6rem;
+    white-space: nowrap;
+    font-size:1.3rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    background-color:#7E30E1;
+    border-radius: 25px;
+    color: white;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 10.3rem;
+    margin-right: -3rem;
+    letter-spacing: 2px;
+    
+}
+.startbut:hover{
+    background-color:#bf93f4;
+    color:#7E30E1;
+}
+.homeright{
+    width: 50%;
+}
+img{
+    margin-top: 16%;
+    height:630px;
+    margin-left: 0%;
+     
+
+}
+
+@media screen and (max-width:850px){
+    img{
+        width: 75%;
+        height: 70%;
+        margin-top: 30%;
+       
+    }
+    .homeleft{
+        margin-top: 90px;
+        margin-left:-50px ;
+        align-items: start;
+        display: flex;
+        flex-direction: column;
+    }
+    .startbut{
+        margin-left: 25px;
+    }
+    .h1a{
+        color: #7E30E1;
+        font-size: 40px;
+        margin-left: -15px;
+    }
+    .h1b{
+       color: #7E30E1;
+       font-size: 39px;
+       margin-top: -0.1rem;
+       margin-left: -15px;
+    }
+    .h3a{
+        margin-top: 2.5rem;
+        color: #7E30E1;
+        font-size: 16px;
+        margin-left: 15px;
+    }
+    .h3b{
+        color: #7E30E1;
+        font-size: 16px;
+        margin-left: 45px;
+    }
+    
+}
