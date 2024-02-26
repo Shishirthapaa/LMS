@@ -14,33 +14,57 @@ const Login=()=>{
     const [password,setPass] = useState('');
     const [userType, setUserType]=useState('');
     const navigate = useNavigate()
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleSubmit =(e)=>{
         e.preventDefault();
+          if (!userType) {
+            alert('Please select a User type.');
+            return;
+          }
         //console.log(email, pass, userType);
         //console.log('Selected UserType:',userType);
-        axios.post('http://localhost:3001/login',{email, password, userType})
-        .then(result =>{
-            console.log(result);
-            if (result.data === "Success") {
-              if (userType === "student") {
-                navigate('/studentdash');
-              } else if (userType === "instructor") {
-                navigate('/instructordash');
-              } else if (userType === "admin") {
-                navigate('/admindash');
-              }
+        axios.post('http://localhost:3001/login', {email, password, userType})
+        .then(result => {
+            console.log('Login result:',result);
+
+            const { accessToken, userType } = result.data;
+                    if (accessToken && userType) {
+                    localStorage.setItem('token', accessToken);
+                    localStorage.setItem('userType', userType);
+
+                    switch (userType) {
+                        case 'student':
+                        navigate('/studentdash');
+                        break;
+                        case 'instructor':
+                        navigate('/instructordash');
+                        break;
+                        case 'admin':
+                        navigate('/admindash');
+                        break;
+                        default:
+                        alert('Invalid user type');
+                    }
+            } else{
+                alert('Incorrect email and password.');
             }
         
-    }).catch(err => {
+    }).catch((err) => {
         console.log(err);
         alert('Login failed.');
     });
-    }
+    };
     
     const selectUserType = (role)=>{
         setUserType(role);
     };
+    const handleTogglePassword = (field) => {
+        setShowPassword((prevState) => ({
+            ...prevState,
+            [field]: !prevState[field],
+          }));
+        };
 
 return(
     <> 
@@ -79,9 +103,14 @@ return(
 
     <form id="logeslog"onSubmit={handleSubmit}> {/* a form is created where email and password is entered by user and stored */}
                     <label id="email" htmlFor="email">Email</label>
-                    <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder=" youremail@gmail.com" id="emailbox" name="email"/> 
+                    <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder=" youremail@gmail.com" id="emailbox" name="email" required/> 
                     <label id="password" htmlFor="password">Password</label>
-                    <input value={password} onChange={(e) => setPass(e.target.value)} type="password" placeholder=" **********" id="passwordbox" name="password"/>
+                    <input value={password} onChange={(e) => setPass(e.target.value)} type={showPassword.password ? 'text':'password'} placeholder=" **********" id="passwordbox" name="password" required/>
+                    <i
+                    className={`fa-solid fa-eye${showPassword.password ? '' : '-slash'}`}
+                    id='eye3'
+                    onClick={() => handleTogglePassword('password')}
+                    ></i>
                     <button id="button2log" type='submit'>LOGIN</button> 
                 </form>
                 <div className='forpw'>

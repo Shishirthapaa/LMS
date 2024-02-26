@@ -10,7 +10,28 @@ export const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+  const checkPasswordStrength = (password) => {
+    if (passwordRegex.test(password)) {
+      return 'Strong ';
+    } else {
+      return 'Weak-Password must be at least 8 characters long and include at least one letter,one special character and one number.';
+    }
+  };
+  const getPasswordStrengthColor = () => {
+    if (password === '') {
+      return 'black'; // or any default color for an empty password
+    } else if (passwordRegex.test(password)) {
+      return 'green';
+    } else {
+      return 'red';
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,6 +39,10 @@ export const Signup = () => {
     if (password !== confirmPassword) {
         alert('Passwords do not match.');
         return;
+    }
+    if (!passwordRegex.test(password)) {
+      alert('Password does not meet the strength requirements.');
+      return;
     }
 
     axios.post('http://localhost:3001/register', { userName, email, password })
@@ -30,6 +55,13 @@ export const Signup = () => {
             console.log(err);
             alert('Registration failed.');
         });
+};
+const handleTogglePassword = (field) => {
+  if (field === 'password') {
+    setShowPassword(!showPassword);
+  } else if (field === 'confirmPassword') {
+    setShowConfirmPassword(!showConfirmPassword);
+  }
 };
 
   return (
@@ -52,13 +84,29 @@ export const Signup = () => {
         
         <form className="signuformm" onSubmit={handleSubmit}>
           <label id='la1' htmlFor='userName'>Username</label>
-          <input value={userName} type='text' placeholder=' Username' id='usernamesignbox' name='username' onChange={(e) => setUserName(e.target.value)}/>
+          <input value={userName} type='text' placeholder=' Username' id='usernamesignbox' name='username' onChange={(e) => setUserName(e.target.value)} required/>
           <label id ="la2" htmlFor="email">Email</label>
-          <input value={email} type="email" placeholder=" youremail@gmail.com" id="emailsignbox" name="email" onChange={(e) => setEmail(e.target.value)} />
+          <input value={email} type="email" placeholder=" youremail@gmail.com" id="emailsignbox" name="email" onChange={(e) => setEmail(e.target.value)} required/>
           <label id ="la3" htmlFor="password">Password</label>
-          <input value={password} type="password" placeholder=" **********" id="passsignbox" name="password" onChange={(e) => setPassword(e.target.value)} />
+          <input value={password} type={showPassword ? 'text':'password'} placeholder=" **********" id="passsignbox" name="password" onChange={(e) => setPassword(e.target.value)} required/>
+          <i
+              className={`fa-solid fa-eye${showPassword ? '' : '-slash'}`}
+              id='eye1'
+              onClick={() => handleTogglePassword('password')}
+            ></i>
+          
+          {password !== '' && (
+          <span className=" passstrength" style={{ color: getPasswordStrengthColor() }}>
+            Password Strength: {checkPasswordStrength(password)}
+          </span>
+          )}
           <label id ="la4" htmlFor="confirmPassword">Confirm Password</label>
-          <input value={confirmPassword} type="password" placeholder=" **********" id="conpasssignbox" name="confirmPassword" onChange={(e) => setConfirmPassword(e.target.value)} />
+          <input value={confirmPassword} type={showConfirmPassword ? 'text':'password'} placeholder=" **********" id="conpasssignbox" name="confirmPassword" onChange={(e) => setConfirmPassword(e.target.value)} required/>
+          <i
+              className={`fa-solid fa-eye${showConfirmPassword ? '' : '-slash'}`}
+              id='eye2'
+              onClick={() => handleTogglePassword('confirmPassword')}
+            ></i>
           <button id="buttonsign" type='submit'> SIGN UP</button>
         
         </form>

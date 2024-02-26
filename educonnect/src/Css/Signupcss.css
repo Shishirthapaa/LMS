@@ -61,33 +61,33 @@
 #la1{
     margin-top: 0px;
     color: #7E30E1;
-    width: 100%;
-    margin-left: -26.3rem;
+    width: 65%;
+    display: flex;
     padding: 8px;
     font-size: 18px;
 }
 #la2{
     margin-top: 10px;
     color: #7E30E1;
-    width: 100%;
-    margin-left: -29rem;
+    width: 65%;
+    display: flex;
     padding: 8px;
     font-size: 18px;
 }
 #la3{
     margin-top: 10px;
-    width: 100%;
-    margin-left: -26.5rem;
+    width: 65%;
+   display: flex;
     color: #7E30E1;
     padding: 8px;
     font-size: 18px;
 
 }
 #la4{
-    margin-top: 10px;
+    margin-top: 18px;
     color: #7E30E1;
-    width: 100%;
-    margin-left: -21.9rem;
+    width: 65%;
+    display: flex;
     padding: 8px;
     font-size: 18px;
 }
@@ -129,7 +129,7 @@
     border: none;
     outline: none;
     font-size: 16px;
-    margin-top: -1px;
+    margin-top: 0px;
 }
 #conpasssignbox{
     width: 65%;
@@ -142,7 +142,7 @@
     border: none;
     outline: none;
     font-size: 16px;
-    margin-top: -1px;
+    margin-top: 1px;
 }
 #usernamesignbox:hover, #emailsignbox:hover, #passsignbox:hover, #conpasssignbox:hover{
     box-shadow: 0 0 0 2px #965de0;
@@ -169,4 +169,90 @@
 #buttonsign:hover{
     background-color:#bf93f4;
     color:#7E30E1;
+}
+#eye1{
+    margin-left: 60%;
+    margin-top: -1.7rem;
+    cursor: pointer;
+    color: #7E30E1;
+}
+#eye2{
+    margin-left: 60%;
+    margin-top: -1.7rem;
+    cursor: pointer;
+    color: #7E30E1;
+}
+.passstrength{
+    font-size: 12px;
+    word-break: break-word;
+    width: 500px;
+    margin-top: 1.1rem;
+    display: flex;
+    text-align: justify;
+}
+@media screen and (max-width: 1024px) {
+    .regisall {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 9%;
+    }
+
+    #buttonsign {
+        margin-left: 5%;
+    }
+
+    #eye1, #eye2 {
+        margin-left: 60%;
+    }
+    .logoreg{
+        height: 120px;
+        width: auto;
+        margin-top: -1rem;
+    }
+    #la1{
+        
+    }
+    #la2{
+        
+    }
+    #la3{
+        
+    }
+    #la4{
+       
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .regisall {
+        margin-top: 15%;
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    #buttonsign {
+        margin-left: 2.5%;
+    }
+
+    #eye1, #eye2 {
+        margin-left: 55%;
+    }
+    .logoreg{
+        height: 90px;
+        width: auto;
+        margin-top:-1rem;
+    }
+    #la1{
+        
+    }
+    #la2{
+        
+    }
+    #la3{
+        
+    }
+    #la4{
+       
+    }
 }

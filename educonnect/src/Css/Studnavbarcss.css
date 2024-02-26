@@ -1,0 +1,25 @@
+.Studentsidebar{
+    width:13%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    position: fixed;
+    height: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+
+}
+.stdnav-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 40px;
+}
+.sidebaricons{
+    height: 50px;
+    width: 50px;
+}
+.stdnav-menu li{
+    text-decoration: none;
+
+}

@@ -121,14 +121,14 @@
 #email{
     margin-top: 2px;
     color: #7E30E1;
-    width: 100%;
-    margin-left: -33.8rem;
+    width: 74%;
+    display: flex;
     padding: 8px;
 }
 #password{
-    margin-top: 2px;
-    width: 100%;
-    margin-left: -31.8rem;
+    margin-top: 14px;
+    width: 74%;
+    display: flex;
     color: #7E30E1;
     padding: 8px;
 
@@ -169,7 +169,7 @@
     background-color: #7E30E1;
     width: 13rem;
     height:2.5rem;
-    margin-top: 1.8rem;
+    margin-top: 2.1rem;
     border-radius: 20px;
     border: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -196,3 +196,149 @@
 #forgotlink{
     text-decoration: none;
 }
+#eye3{
+    margin-left: 68%;
+    margin-top: -1.7rem;
+    cursor: pointer;
+    color: #7E30E1;
+}
+
+@media screen and (max-width: 1024px) {
+    .logcard {
+        margin-top:10%;
+      width: 70%; 
+      margin-left: 15%;
+      height:650px
+    }
+  
+    #button2log {
+      margin-left: 7%; 
+    }
+  
+    .forpw {
+      margin-left: 8%;
+      padding-top: .5rem;
+    }
+  
+    #eye3 {
+      margin-left: 70%;
+    }
+    .loglogo{
+        height: 120px;
+        width: auto;
+        margin-top: 0rem;
+    }
+    #email{
+        margin-left:0rem;
+    }
+    #password{
+        margin-left: 0rem;
+    }
+    #button2log{
+        margin-top: 2.2rem;
+    }
+    .usercard{
+        padding: 10px;
+    }
+    .studimg{
+        height:100px;
+        width: 110px;
+    }
+    .instimg{
+        height:100px;
+        width: 110px;
+    }
+    .admiimg{
+        height:100px;
+        width: 110px;
+    }
+    .stud{
+        height:170px;
+        width:150px;
+    }
+    .teach{
+        height:170px;
+        width:150px;
+    }
+    .adm{
+        height:170px;
+        width:150px;
+    }
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .logcard {
+      width: 90%; 
+      margin-left: 5%;
+      margin-top: 15%;
+    }
+  
+    #button2log {
+      margin-left: 0; 
+      margin-top: 3rem;
+    }
+  
+    .forpw {
+      margin-left: 1%;
+      margin-top: 0.5rem;
+    }
+  
+    #eye3 {
+      margin-left: 70%;
+    }
+    .loglogo{
+        height: 90px;
+        width: auto;
+        margin-top:-1rem;
+    }
+    #email{
+        margin-left:0rem;
+    }
+    #password{
+        margin-left: 0rem;
+    }
+    .usercard{
+        padding: 10px;
+        width: 120%;
+        margin-left: -10%;
+    }
+    .studimg{
+        height:70px;
+        width: 80px;
+        margin-left: -1px;
+    }
+    .instimg{
+        height:70px;
+        width: 80px;
+        margin-left: -1px;
+    }
+    .admiimg{
+        height:70px;
+        width: 80px;
+    }
+    .stud{
+        height:150px;
+        width:100px;
+    }
+    .teach{
+        height:150px;
+        width:100px;
+    }
+    .adm{
+        height:150px;
+        width:100px;
+    }
+    .student{
+        font-size: 16px;
+    }
+    .instruct{
+        font-size: 16px;
+    }
+    .adminn{
+        font-size: 16px;
+    }
+    .chooseacc{
+        font-size: 26px;
+    }
+  }
