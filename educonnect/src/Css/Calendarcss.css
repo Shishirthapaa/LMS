@@ -1,0 +1,66 @@
+
+.rbc-calendar {
+    font-family: Arial, sans-serif; 
+    
+  }
+  
+  .rbc-month-view,
+  .rbc-week-view,
+  .rbc-day-view {
+    border: 0px solid #cccccc; 
+    
+  }
+  .rbc-overlay {
+    background-color: #fff; /* Change popover background color */
+    border: 1px solid #ccc; /* Add border to popover */
+    border-radius: 5px; /* Add border radius to popover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+     /* Add box shadow to popover */
+  }
+  .rbc-event {
+    background-color: #7E30E1; 
+    color: #fff; 
+  }
+  .rbc-event.rbc-selected {
+    background-color: #7E30E1; /* Change background color */
+    color: #fff; /* Change text color */
+  }
+  
+  
+  .rbc-toolbar {
+    background-color: #f0f0f0; 
+  }
+  
+  .rbc-time-header-content {
+    background-color: #f0f0f0; 
+  }
+  .rbc-header,
+.rbc-date-cell {
+  padding: 2px; /* Add padding to headers and date cells */
+  text-align: center;
+   /* Center align text in headers and date cells */
+}
+.rbc-today {
+    background-color: #dac4f8; /* Change background color of today's date */
+    border: 1px solid #ccc; /* Add border to today's date *//* Make today's date circle-shaped */
+  }
+  
+  /* Styling for selected date */
+  .rbc-selected {
+    background-color: #bf93f4; /* Change background color of selected date */
+    color: #fff; /* Change text color of selected date */
+  }
+  
+  /* Styling for date cell */
+  .rbc-date-cell {
+    cursor: pointer; 
+    
+    /* Change cursor to pointer for date cells */
+  }
+  
+  /* Styling for date cell containing events */
+  .rbc-row-segment {
+    padding: 2px 0;
+     /* Add padding to rows containing events */
+  }
+  

@@ -1,3 +1,4 @@
+
 .Topbarr{
     display : flex;
     justify-content: space-between;
@@ -8,7 +9,8 @@
     width: 100%;
     height:10%;
     position: fixed;
-    z-index: 9999;
+    z-index: 10000;
+    background-color: white;
     
 }
 .topleftside{
@@ -26,9 +28,14 @@
     flex-direction: row;
     justify-content: space-around;
     width: 20%;
-    font-size: 30px;
-    opacity: 71%;
+    font-size: 35px;
+    opacity: 70%;
     align-items: right;
+    margin-right: 1%;
+
+}
+.sett{
+    opacity: 140%;
 }
 
 @media screen and (max-width:1024px) {
@@ -42,7 +49,8 @@
         width: 100%;
         height:10%;
         position: fixed;
-        z-index: 9999;
+        z-index: 10000;
+        background-color: white;
         
     }
     .topleftside{
@@ -78,7 +86,8 @@
         width: 100%;
         height:10%;
         position: fixed;
-        z-index: 9999;
+        z-index: 10000;
+        background-color: white;
         
     }
    

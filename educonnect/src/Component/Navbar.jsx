@@ -8,26 +8,26 @@ import { MenuItems } from './MenuItems';
 class Navbar extends Component{
     state = {clicked:false};
     handleClick =()=>{
-        this.setState({clicked:!this.state.clicked})    /* defining a function named handleClick*/
+        this.setState({clicked:!this.state.clicked})    
     }
     render(){
         return(
             <nav className="NavbarItemss"> 
                 <img src={logo} alt="logo" className="logooa"/>
-                <div className='menu-icons' onClick={this.handleClick}> {/* a div when clicked run the handleClick function */}
+                <div className='menu-icons' onClick={this.handleClick}> 
                     <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
                 </div>
                 <div className='nav_menu'>
-                <ul className={this.state.clicked ? "nav-menu active":"nav-menu"}> {/* when clicked navigates to the page acoordingly */} 
+                <ul className={this.state.clicked ? "nav-menu activee":"nav-menu"}>  
                     {MenuItems.map((item, index)=>{
                         return(
                             <li key={index}>
-                             <Link className={item.cName} to={item.url}>{item.title}</Link> {/* Linking the nav bar contents to their respective page */}
+                             <Link className={item.cName} to={item.url}>{item.title}</Link> 
                             </li>
                      )
                     })}
                     <Link to="/login">
-                         <button className='logbut'>Login / Sign Up</button> {/* Linking login page when button is clicked */}
+                         <button className='logbut'>Login / Sign Up</button>
                     </Link>
                 </ul>
                 </div>

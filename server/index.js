@@ -7,11 +7,18 @@ const StudentModel = require('./models/Student');
 const AdminModel = require('./models/Admin');
 const InstructorModel = require('./models/Instructor');
 require("dotenv").config();
+const addcourseRouter = require('./Components/AddCourse');
+const editcourseRouter = require('./Components/EditCourse');
+const deletecourseRouter = require('./Components/DeleteCourse');
 
 
 const app = express()
 app.use(express.json())
 app.use(cors())
+app.use('/courses', addcourseRouter);
+app.use('/courses', editcourseRouter);
+app.use('/courses', deletecourseRouter);
+
 
 mongoose.connect("mongodb://127.0.0.1:27017/lms");
 

@@ -5,8 +5,9 @@ import Homerest from '../Component/Homerest';
 const  Home=()=>{
     return( 
         <>
+
         <Navbar/>
-        <Homerest/>
+        <Homerest />
         </>
     )
 }

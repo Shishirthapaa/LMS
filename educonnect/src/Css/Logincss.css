@@ -96,7 +96,7 @@
 }
 .stud:hover, .teach:hover, .adm:hover,
 .stud.selected, .teach.selected, .adm.selected {
-    background-color: #faf9fc; /* Change the background color on hover or when selected */
+    background-color: #faf9fc; 
 }
 .studimg{
     height:110px;

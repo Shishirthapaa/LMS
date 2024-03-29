@@ -1,31 +1,31 @@
 
-.headerrtop{
+.admintopp{
     position: fixed;
     z-index: 10000;
     height: 10%;
 }
-.siderrr{
+.adminsidee{
     position: fixed;
     z-index: 9999;
     height: 90%;
 }
-.allstdcard {
+.alladmcard {
     display: flex;
     flex-wrap: wrap; 
-    justify-content: space-evenly; 
-    background-color: #FFFFFF;
-
+    justify-content: space-evenly;
+    background-color: #FFFCFF;
+ 
 }
-.studleftcard{
+.admleftcard{
     display: flex;
     flex-direction: column;
     margin-left: 9%;
     margin-top: 7.5%;
-    background-color: #FFFFFF;
+    background-color: #FFFCFF;
 
 }
 
-.lefttopcard{
+.admlefttopcard{
     width: 760px; 
     height: 150px; 
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -34,33 +34,27 @@
     padding: 20px;
     margin-left: 5%;
     background-color: white;
+    padding-top: 5%;
+    font-size: 20px;
+}
+.admleftbottomcard{
     display: flex;
     flex-direction: row;
-    padding-top: 3%;
-    gap: 2%;
-}
-#stdname{
-    color: #7E30E1;
-}
-.leftbottomcard{
-    display: flex;
-    flex-direction: row;
+    background-color: #FFFCFF;
     margin-top: 3%;
-    background-color: #FFFFFF;
-
 }
-.bottomleftcard{
+.admbottomleftcard{
     width: 485px; 
     height: 455px;  
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    border-radius: 20px;
+    border-radius: 12px;
     padding: 20px;
     margin-left: 5%;
     background-color: white;
 
 }
-.bottomrightcard{
+.admbottomrightcard{
     width: 315px; 
     height: 455px; 
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -71,14 +65,14 @@
     background-color: white;
 
 }
-.studrightcard{
+.admrightcard{
     display: flex;
     flex-direction: column;
     margin-top: 7.5%;
-    background-color: #FFFFFF;
+    background-color: #FFFCFF;
 
 }
-.righttop{
+.admrighttop{
     width: 470px; 
     height: 300px;  
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -88,7 +82,7 @@
     background-color: white;
 
 }
-.rightbottom{
+.admrightbottom{
     width: 470px; 
     height: 300px; 
     margin-top: 6%; 
@@ -99,20 +93,41 @@
     background-color: white;
 
 }
+#weladmdashc{
+    color:black;
+
+}
+.card-link-crs{
+    text-decoration: none;
+}
+.crslistul{
+    margin-top: 8%;
+    list-style-type:disc;
+    padding-left: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+.crslistli{
+    font-size: 18px;
+    margin-left: -20px;
+
+}
 @media screen and (max-width:1024px) {
     
-    .allstdcard {
+    .alladmcard {
         display: flex;
         flex-wrap: wrap; 
         justify-content: space-evenly; 
     }
-    .studleftcard{
+    .admleftcard{
         display: flex;
         flex-direction: column;
         margin-left: 11%;
         margin-top: 11%;
     }
-    .lefttopcard{
+    .admlefttopcard{
         width: 740px; 
         height: 150px; 
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -121,12 +136,12 @@
         padding: 20px;
         margin-left: 5%;
     }
-    .leftbottomcard{
+    .admleftbottomcard{
         display: flex;
         flex-direction: row;
         margin-top: 4%;
     }
-    .bottomleftcard{
+    .admbottomleftcard{
         width: 465px; 
         height: 455px;  
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -135,7 +150,7 @@
         padding: 20px;
         margin-left: 5%;
     }
-    .bottomrightcard{
+    .admbottomrightcard{
         width: 315px; 
         height: 455px; 
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -144,13 +159,13 @@
         padding: 20px;
         margin-left: 5%;
     }
-    .studrightcard{
+    .admrightcard{
         display: flex;
         flex-direction: column;
         margin-top: 3%;
         margin-left: 15%;
     }
-    .righttop{
+    .admrighttop{
         width: 500px; 
         height: 300px;  
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -160,7 +175,7 @@
         background-color: white;
     
     }
-    .rightbottom{
+    .admrightbottom{
         width: 500px; 
         height: 300px; 
         margin-top: 6%; 
@@ -174,67 +189,59 @@
     }
 }
 @media screen and (max-width:768px) {
-    .headerrtop{
+    .admintopp{
         position: fixed;
         z-index: 10000;
         height: 10%;
     }
-    .siderrr{
+    .adminsidee{
         position: fixed;
         z-index: 9999;
         height: auto;
         width: 100%;
         bottom: 0;
     }
-    
-    .allstdcard {
+    .alladmcard {
         display: flex; 
         justify-content: space-evenly; 
-        width: 94%;
+        width: 94%;        
         flex-direction: column;
         margin-left: -6%;
     }
-    #welstddash{
-        font-size: 20px;
-    }
-    #stdname{
-        color: #7E30E1;
-        font-size: 20px;
-    }
-    .studleftcard{
+    .admleftcard{
         display: flex;
         flex-direction: column;
         margin-top: 25%;
         width: 100%;
         align-self: flex-start;
+
     }
-    .lefttopcard{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+    #weladmdash{
+        font-size: 20px;
+    }
+    .admlefttopcard{
         width: 90%; 
         height: 70px; 
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
         border-radius: 12px;
         padding: 20px;
-
     }
-    .leftbottomcard{
+    .admleftbottomcard{
         display: flex;
         flex-direction: column;
         margin-top: 4%;
     }
-    .bottomleftcard{
+    .admbottomleftcard{
         width: 90%; 
         height: 250px;  
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
         border-radius: 15px;
         padding: 20px;
-
+        font-size: 13px;
     }
-    .bottomrightcard{
+    .admbottomrightcard{
         width: 90%; 
         height: 250px; 
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -242,15 +249,15 @@
         border-radius: 15px;
         padding: 20px;
         margin-top: 5%;
-  
+        font-size: 13px;
     }
-    .studrightcard{
+    .admrightcard{
         display: flex;
         flex-direction: column;
         margin-top: 5%;
         width: 100%;
-    }
-    .righttop{
+        }
+    .admrighttop{
         width: 90%; 
         height: 280px;  
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -258,17 +265,19 @@
         border-radius: 15px;
         padding: 20px;
         background-color: white;
- 
+        font-size: 13px;
     }
-    .rightbottom{
+    .admrightbottom{
         width: 90%; 
         height: 280px; 
         margin-top: 6%; 
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
-        border-radius: 15px;
+        border-radius: 20px;
         padding: 20px;
         background-color: white;
         margin-bottom: 22%;
+        font-size: 13px;
+    
     }
 }

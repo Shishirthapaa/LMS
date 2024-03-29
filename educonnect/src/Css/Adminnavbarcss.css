@@ -1,4 +1,4 @@
-.Studentsidebar {
+.Adminsidebar {
     width:140%;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@
     background-color: white;
 }
 
-.stdnav_menu {
+.admnav_menu {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -19,14 +19,14 @@
     height: 100%;
 
 }
-.stdlinks{
+.admlinks{
     text-decoration: none;
     color:black;
     opacity: 72%;
     height: 30%;
 
 }
-.stdlinks:hover{
+.admlinks:hover{
     opacity: 100%;
     color: #bf93f4;
 }
@@ -37,19 +37,19 @@
 }
 
 
-.stdsidetext {
+.admsidetext {
    
     font-size: 23px;
    
 }
 
-.stdsideicon {
+.admsideicon {
     font-size: 40px;
-    padding-top: 5%;
+    padding-top: 8%;
     
 }
 @media screen and (max-width:1024px) {
-    .Studentsidebar{
+    .Adminsidebar{
         width:130%;
         display: flex;
         flex-direction: column;
@@ -61,7 +61,7 @@
         z-index: 9999;
         background-color: white;
     }
-    .stdnav_menu {
+    .admnav_menu {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -69,14 +69,14 @@
         height: 100%;
     
     }
-    .stdlinks{
+    .admlinks{
         text-decoration: none;
         color:black;
         opacity: 72%;
         height: 30%;
     
     }
-    .stdlinks:hover{
+    .admlinks:hover{
         opacity: 100%;
         color: #bf93f4;
     }
@@ -85,41 +85,42 @@
         color: white;
         opacity: 110;
     }
-    .stdsidetext {
+    .admsidetext {
    
         font-size: 18px;
        
     }
     
-    .stdsideicon {
+    .admsideicon {
         font-size: 35px;
         padding-top: 10%;
         
     }
 }
 @media screen and (max-width:768px){
-    .Studentsidebar{
+    .Adminsidebar{
         width:100%;
         display: flex;
         flex-direction: row;
         bottom: 0;
+        position: relative;
         height: auto;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         transition: 0.3s;
         z-index: 9999;
         background-color: white;
-        position: relative;
+        align-items: center;
     }
-    .stdnav_menu {
+    .admnav_menu {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        height: auto;
         width: 100%;
+        height: auto;
         align-items: start;
     
     }
-    .stdlinks{
+    .admlinks{
         text-decoration: none;
         color:black;
         opacity: 72%;
@@ -127,7 +128,7 @@
         width: 100%;
     
     }
-    .stdlinks:hover{
+    .admlinks:hover{
         opacity: 100%;
         color: #bf93f4;
     }
@@ -136,16 +137,16 @@
         color: white;
         opacity: 110;
     }
-    .stdsidetext {
+    .admsidetext {
    
         font-size: 18px;
         display: none;
        
     }
     
-    .stdsideicon {
+    .admsideicon {
         font-size: 40px;
-        padding-top: 0%;
+        padding-top: 5%;
         
     }
 
