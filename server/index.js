@@ -80,10 +80,15 @@ app.use('/notices', FetchNotice);
 app.use('/lms', FetchMessage);
 
 
+const uri = process.env.MONGODB_URI;
 
-
-
-mongoose.connect("mongodb://127.0.0.1:27017/lms");
+mongoose.connect(uri)
+  .then(() => {
+    console.log('Connected to MongoDB');
+  })
+  .catch((error) => {
+    console.error('Error connecting to MongoDB:', error);
+  });
 
 const generateAccessToken = (user) => {
   return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1h' });
@@ -299,7 +304,6 @@ app.get('/staticbooks', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
-
 app.listen(3001, () =>{
     console.log("server is running")
 });

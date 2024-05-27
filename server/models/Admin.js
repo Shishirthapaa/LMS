@@ -8,11 +8,11 @@ const AdminSchema = new mongoose.Schema({
 const AdminModel = mongoose.model('Admin', AdminSchema);
 
 // Created a default admin user
-AdminModel.create({
-  email: 'admin@gmail.com',
-  password: 'admin@123',
-})
-  .then(admin => console.log('Default admin user created:', admin))
-  .catch(error => console.error('Error creating default admin user:', error));
+// AdminModel.create({
+//   email: 'admin@gmail.com',
+//   password: 'admin@123',
+// })
+//   .then(admin => console.log('Default admin user created:', admin))
+//   .catch(error => console.error('Error creating default admin user:', error));
 
 module.exports = AdminModel;

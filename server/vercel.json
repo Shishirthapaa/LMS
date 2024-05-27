@@ -1,0 +1,18 @@
+{
+    "version": 2,
+    "name": "lms",
+    "builds": [
+      {
+        "src": "server/index.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "educonnect",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+        { "handle": "filesystem" }
+    ]
+  }
+  
