@@ -30,12 +30,17 @@
     opacity: 100%;
     color: #bf93f4;
 }
-.active{
+.std-active{
     background-color: #7E30E1;
     color: white;
     opacity: 110%;
 }
-
+.stdlinks.active {
+    
+    background-color: #7E30E1;
+    color: white;
+    opacity: 110%;
+}
 
 .stdsidetext {
    
@@ -80,7 +85,13 @@
         opacity: 100%;
         color: #bf93f4;
     }
-    .active{
+    .stdlinks.active {
+    
+        background-color: #7E30E1;
+        color: white;
+        opacity: 110%;
+    }
+    .std-active{
         background-color: #7E30E1;
         color: white;
         opacity: 110;
@@ -131,7 +142,13 @@
         opacity: 100%;
         color: #bf93f4;
     }
-    .active{
+    .stdlinks.active {
+    
+        background-color: #7E30E1;
+        color: white;
+        opacity: 110%;
+    }
+    .std-active{
         background-color: #7E30E1;
         color: white;
         opacity: 110;

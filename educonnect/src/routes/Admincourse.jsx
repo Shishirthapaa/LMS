@@ -17,6 +17,7 @@ function Admincourse(){
     const [newCourse, setNewCourse] = useState({
         courseId: "",
         courseTitle: "",
+        courseCode:"",
         courseDescription: "",
         courseDuration: ""
     });
@@ -52,6 +53,7 @@ const fetchCourses = async () => {
         setNewCourse({
             courseId: course.courseId,
             courseTitle: course.courseTitle,
+            courseCode: course.courseCode,
             courseDescription: course.courseDescription,
             courseDuration: course.courseDuration
         });
@@ -77,7 +79,7 @@ const fetchCourses = async () => {
         }));
     }
     const handleAddCourse = async () => {
-        if (!newCourse.courseId || !newCourse.courseTitle || !newCourse.courseDescription || !newCourse.courseDuration){
+        if (!newCourse.courseId || !newCourse.courseTitle || !newCourse.courseCode || !newCourse.courseDescription || !newCourse.courseDuration){
             setError("Please fill in all fields.");
             return;
         }
@@ -97,6 +99,7 @@ const fetchCourses = async () => {
                 setNewCourse({
                     courseId: "",
                     courseTitle: "",
+                    courseCode:"",
                     courseDescription: "",
                     courseDuration: ""
                 });
@@ -115,8 +118,8 @@ const fetchCourses = async () => {
                 setError('No course selected for editing');
                 return;
             }
-          const { courseId, courseTitle, courseDescription, courseDuration } = newCourse;
-          const courseData = { courseId, courseTitle, courseDescription, courseDuration };
+          const { courseId, courseTitle, courseCode, courseDescription, courseDuration } = newCourse;
+          const courseData = { courseId, courseTitle, courseCode, courseDescription, courseDuration };
           if (!selectedCourse._id) {
             setError('Selected course does not have a valid ID');
             return;
@@ -138,6 +141,7 @@ const fetchCourses = async () => {
           setNewCourse({
             courseId: "",
             courseTitle: "",
+            courseCode:"",
             courseDescription: "",
             courseDuration: ""
           });
@@ -178,7 +182,7 @@ const fetchCourses = async () => {
         </div>
         <div className='adminall'>
             <div className='admcourseinfo'>
-                <h2 className='courseinfoo'>Course-Info</h2> 
+                <h3 className='courseinfoo'>Course-Info</h3> 
             </div>
             <button id="addcrsbtn" type='button' onClick={handleOpenModal}>Add Course</button> 
 
@@ -190,6 +194,7 @@ const fetchCourses = async () => {
                         <div className="row font-weight-bold" style={{ backgroundColor: '#383A3F', color: 'white', padding: '10px 0' }}>
                             <div className="col">Course ID</div>
                             <div className="col">Course Title</div>
+                            <div className="col">Course Code</div>
                             <div className="col">Course Duration(in weeks)</div>
                             <div className="col">Actions</div>
                         </div>
@@ -197,6 +202,7 @@ const fetchCourses = async () => {
                         <div className="row" key={course._id}>
                             <div className="col">{course.courseId}</div>
                             <div className="col">{course.courseTitle}</div>
+                            <div className="col">{course.courseCode}</div>
                             <div className="col">{course.courseDuration}</div>
                             <div className="col">
                             <button className="btn btn-edit mr-2" onClick={() => handleOpencrsEditModal(course)}>
@@ -217,36 +223,40 @@ const fetchCourses = async () => {
                            
 
         </div>
-        <div className={`modal fade ${showModal ? 'show' : ''}`} id="addCourseModal" tabIndex="-1" aria-labelledby="addCourseModalLabel" aria-hidden="true" style={{ display: showModal ? 'block' : 'none' }}>
+        <div className={`modal fade ${showModal ? 'show' : ''}`} id="addCourseModal" tabIndex="-1" aria-labelledby="addCourseModalLabel" aria-hidden="true" style={{ display: showModal ? 'block' : 'none',marginTop: '1.2%' }}>
         <div className="modal-dialog modal-dialog-centered">
-        <div className="modal-content">
-            <div className="modal-header">
-                <h1 className="modal-title fs-5" id="addCourseModalLabel">Add New Course</h1>
+        <div className="modal-content" style={{ fontSize: '1rem', padding:'0rem', overflowY: 'auto' }}>
+            <div className="modal-header" style={{ padding: '0.5rem'}}>
+                <h2 className="modal-title fs-5" id="addCourseModalLabel">Add New Course</h2>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={handleCloseModal}></button>
             </div>
             
             <div className="modal-body">
                 <form>
-                    <div className="mb-3">
+                    <div className="mb-2">
                         <label htmlFor="courseId" className="col-form-label">Course ID:</label>
                         <input type="text" className="form-control" id="courseId" name="courseId" value={newCourse.courseId} onChange={handleInputChange} required />
                     </div>
-                    <div className="mb-3">
+                    <div className="mb-2">
                         <label htmlFor="courseTitle" className="col-form-label">Course Title:</label>
                         <input type="text" className="form-control" id="courseTitle" name="courseTitle" value={newCourse.courseTitle} onChange={handleInputChange} required />
                     </div>
-                    <div className="mb-3">
+                    <div className="mb-2">
+                        <label htmlFor="courseCode" className="col-form-label">Course Code:</label>
+                        <input type="text" className="form-control" id="courseCode" name="courseCode" value={newCourse.courseCode} onChange={handleInputChange} required />
+                    </div>
+                    <div className="mb-2">
                         <label htmlFor="courseDescription" className="col-form-label">Course Description:</label>
                         <textarea className="form-control" id="courseDescription" name="courseDescription" value={newCourse.courseDescription} onChange={handleInputChange} required></textarea>
                     </div>
-                    <div className="mb-3">
+                    <div className="mb-2">
                         <label htmlFor="courseDuration" className="col-form-label">Course Duration:</label>
                         <input type="text" className="form-control" id="courseDuration" name="courseDuration" value={newCourse.courseDuration} onChange={handleInputChange} required />
-                        {errors && (<div className="alert alert-danger mt-2">{errors}</div>)}                 </div>
+                        {errors && (<div className="alert alert-danger mt-1" style={{ padding: '0.3rem', fontSize: '1rem' }}>{errors}</div>)}                 </div>
                 </form>
             </div>
             
-            <div className="modal-footer">
+            <div className="modal-footer" style={{ padding: '0.4rem'}}>
                 <button type="button" className="btn btn-secondary" onClick={handleCloseModal}>Close</button>
                 <button type="button" className="btn btn-primary" onClick={handleAddCourse} style={{backgroundColor:"#7E30E1"}}>Add Course</button>
             </div>
@@ -257,36 +267,40 @@ const fetchCourses = async () => {
     
 </div>
 
-<div className={`modal fade ${crsEditModal ? 'show' : ''}`} id="editCourseModal" tabIndex="-1" aria-labelledby="editCourseModalLabel" aria-hidden="true" style={{ display: crsEditModal ? 'block' : 'none' }}>
+<div className={`modal fade ${crsEditModal ? 'show' : ''}`} id="editCourseModal" tabIndex="-1" aria-labelledby="editCourseModalLabel" aria-hidden="true" style={{ display: crsEditModal ? 'block' : 'none', marginTop: '1.2%' }}>
         <div className="modal-dialog modal-dialog-centered">
-        <div className="modal-content">
-            <div className="modal-header">
+        <div className="modal-content" style={{ fontSize: '1rem', padding:'0rem', overflowY: 'auto' }}>
+            <div className="modal-header" style={{ padding: '0.5rem'}}>
                 <h1 className="modal-title fs-5" id="editCourseModalLabel">Edit Course</h1>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={handleClosecrsEditModal}></button>
             </div>
             
             <div className="modal-body">
                 <form>
-                    <div className="mb-3">
+                    <div className="mb-2">
                         <label htmlFor="courseId" className="col-form-label">Course ID:</label>
-                        <input type="text" className="form-control" id="courseId" name="courseId" value={newCourse.courseId} onChange={handleInputChange} required />
+                        <input type="text" className="form-control" id="courseId" name="courseId" value={newCourse.courseId} onChange={handleInputChange} required disabled/>
                     </div>
-                    <div className="mb-3">
+                    <div className="mb-2">
                         <label htmlFor="courseTitle" className="col-form-label">Course Title:</label>
                         <input type="text" className="form-control" id="courseTitle" name="courseTitle" value={newCourse.courseTitle} onChange={handleInputChange} required />
                     </div>
-                    <div className="mb-3">
+                    <div className="mb-2">
+                        <label htmlFor="courseCode" className="col-form-label">Course Code:</label>
+                        <input type="text" className="form-control" id="courseCode" name="courseCode" value={newCourse.courseCode} onChange={handleInputChange} required />
+                    </div>
+                    <div className="mb-2">
                         <label htmlFor="courseDescription" className="col-form-label">Course Description:</label>
                         <textarea className="form-control" id="courseDescription" name="courseDescription" value={newCourse.courseDescription} onChange={handleInputChange} required></textarea>
                     </div>
-                    <div className="mb-3">
+                    <div className="mb-2">
                         <label htmlFor="courseDuration" className="col-form-label">Course Duration:</label>
                         <input type="text" className="form-control" id="courseDuration" name="courseDuration" value={newCourse.courseDuration} onChange={handleInputChange} required />
-                        {errors && (<div className="alert alert-danger mt-2">{errors}</div>)}                 </div>
+                        {errors && (<div className="alert alert-danger mt-1" style={{ padding: '0.3rem', fontSize: '1rem' }}>{errors}</div>)}                 </div>
                 </form>
             </div>
             
-            <div className="modal-footer">
+            <div className="modal-footer" style={{ padding: '0.4rem'}}>
                 <button type="button" className="btn btn-secondary" onClick={handleClosecrsEditModal}>Close</button>
                 <button type="button" className="btn btn-primary" onClick={handleEditCourse} style={{backgroundColor:"#7E30E1"}}>Edit Course</button>
             </div>
@@ -296,7 +310,7 @@ const fetchCourses = async () => {
     </div>
     
 </div>
-<div className={`modal fade ${crsDeleteModal ? 'show' : ''}`} id="deleteCourseModal" tabIndex="-1" aria-labelledby="editCourseModalLabel" aria-hidden="true" style={{ display: crsDeleteModal ? 'block' : 'none' }}>
+<div className={`modal fade ${crsDeleteModal ? 'show' : ''}`} id="deleteCourseModal" tabIndex="-1" aria-labelledby="editCourseModalLabel" aria-hidden="true" style={{ display: crsDeleteModal ? 'block' : 'none', marginTop: '-1%' }}>
         <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content">
             <div className="modal-header">

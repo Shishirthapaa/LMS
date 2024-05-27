@@ -1,0 +1,142 @@
+.stdmessagecontainer {
+    display: flex;
+    width: 100%;
+    min-height: 77vh;
+    max-height: 77vh;
+}
+
+.stdgroupnames {
+    flex: 2;
+    padding: 10px;
+    flex-basis: 30%; 
+    border-right: 2px solid #808080;
+}
+
+.stdlivechat {
+    flex: 1;
+    flex-basis: 25%; 
+    padding: 1px;
+    border-right: 2px solid #808080;
+
+}
+
+
+.stdgroupmembers {
+    flex: 1;
+    padding: 10px;
+    flex-basis: 25%; 
+}
+.stdgrouplist{
+    height: 85%;
+    margin-bottom: 16%;
+    
+}
+.stdgrouplist ul {
+    list-style: none;
+    padding: 10px;
+    text-align: start;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.stdmemberslist{
+    height: 20%;
+}
+.stdmemberslist ul{
+    list-style: none;
+    padding: 2px;
+    text-align: start;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: white;
+    overflow: auto;
+}
+
+.stdgroupnames, .stdgroupmembers {
+    flex: 1; 
+}
+
+.stdchatalllive{
+    height: 83%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow-y: scroll;
+}
+.stdchatbubble {
+    max-width: 70%; 
+    margin: 5px;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    height: auto;
+}
+
+.stdsendername {
+    font-size: 12px;
+    margin-bottom: 1px;
+    
+}
+
+.stdchatbubbleright {
+    background-color: #bf93f4; 
+    align-self: flex-end;
+    height: auto;
+    padding-top: 2.5%;
+}
+
+.stdchatbubbleleft {
+    background-color: #E5E5EA; 
+    align-self: flex-start;
+    height: auto;
+    padding-top: 2.5%;
+}
+.stdchatdiv{
+    height: 10%;
+    margin-bottom: 2%;
+}
+.chatboxinput{
+    border-radius: 15px;
+    height: 2.5rem;
+    width: 30rem;
+    background-color: #ededed;
+    padding-left: 2%;
+}
+.sendmessageicon{
+    cursor: pointer;
+    margin-left: 2%;
+    margin-bottom: 0.8%;
+    
+}
+.stdchatgroupname{
+    height:7% ;
+    margin-top: -1%;
+    background-color:#bf93f4;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.2s ease-in-out;
+    color: black;
+    padding-top: 0.5%;
+    opacity: 80%;
+}
+
+
+
+@media (max-width: 768px) {
+    .stdmessagecontainer {
+        flex-direction: column;
+    }
+
+    .stdgroupnames,
+    .stdlivechat,
+    .stdgroupmembers {
+        flex: 1;
+        border: none;
+    }
+
+    .stdgroupnames,
+    .stdgroupmembers {
+        border-bottom: 1px solid #ccc;
+    }
+}

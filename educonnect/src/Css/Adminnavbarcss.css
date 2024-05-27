@@ -30,7 +30,13 @@
     opacity: 100%;
     color: #bf93f4;
 }
-.active{
+.admlinks.active {
+    
+    background-color: #7E30E1;
+    color: white;
+    opacity: 110%;
+}
+.adm-active{
     background-color: #7E30E1;
     color: white;
     opacity: 110%;
@@ -80,7 +86,14 @@
         opacity: 100%;
         color: #bf93f4;
     }
-    .active{
+    .admlinks.active {
+    
+        background-color: #7E30E1;
+        color: white;
+        opacity: 110%;
+    }
+    
+    .adm-active{
         background-color: #7E30E1;
         color: white;
         opacity: 110;
@@ -132,7 +145,14 @@
         opacity: 100%;
         color: #bf93f4;
     }
-    .active{
+    .admlinks.active {
+    
+        background-color: #7E30E1;
+        color: white;
+        opacity: 110%;
+    }
+    
+    .adm-active{
         background-color: #7E30E1;
         color: white;
         opacity: 110;

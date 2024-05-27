@@ -13,10 +13,11 @@ router.get('/editcourses', async (req, res)=>{
 
 router.put('/editcourses/:id', async(req, res)=>{
     const courseId =req.params.id;
-    const {courseTitle, courseDescription, courseDuration } = req.body;
+    const {courseTitle, courseCode, courseDescription, courseDuration } = req.body;
     try{
         const updatedCourse = await Course.findByIdAndUpdate(courseId,{
             courseTitle,
+            courseCode,
             courseDescription,
             courseDuration
         }, {new: true});

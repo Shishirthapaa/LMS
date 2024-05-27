@@ -28,18 +28,22 @@
 }
 
 .signhead{
-    margin-top: 9px;
+    margin-top: 12px;
 }
 .signalltop{
-    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: -10px;
 }
 #head_er{
-    font-size: 40px;
+    font-size: 38px;
     font-weight: 600;
 }
 #alreadyacclog{
     font-size: 18px;
-    padding-top: 10px;
+    padding-right: 10px;
+    
 }
 .loglinks{
     text-decoration: none;
@@ -48,7 +52,6 @@
     color:#7E30E1;
     text-decoration: none;
     font-size:18px;
-    padding-top: 10px;
     font-weight: bold;
 }
 .signuformm{
@@ -56,7 +59,7 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
-    padding-top: 5%;
+    padding-top: 15px;
 }
 #la1{
     margin-top: 0px;
@@ -103,6 +106,7 @@
     outline: none;
     font-size: 16px;
     margin-top: -1px;
+    padding-left: 1%;
 }
 #emailsignbox{
     width: 65%;
@@ -116,6 +120,7 @@
     outline: none;
     font-size: 16px;
     margin-top: -1px;
+    padding-left: 1%
     
 }
 #passsignbox{
@@ -130,6 +135,7 @@
     outline: none;
     font-size: 16px;
     margin-top: 0px;
+    padding-left: 1%
 }
 #conpasssignbox{
     width: 65%;
@@ -143,6 +149,7 @@
     outline: none;
     font-size: 16px;
     margin-top: 1px;
+    padding-left: 1%
 }
 #usernamesignbox:hover, #emailsignbox:hover, #passsignbox:hover, #conpasssignbox:hover{
     box-shadow: 0 0 0 2px #965de0;
@@ -186,9 +193,19 @@
     font-size: 12px;
     word-break: break-word;
     width: 500px;
-    margin-top: 1.1rem;
+    margin-top: 1rem;
     display: flex;
     text-align: justify;
+    margin-bottom: -2%;
+}
+.userNamevalid{
+    font-size: 12px;
+    width: 500px;
+    margin-top: 6px;
+    display: flex;
+    text-align: justify;
+    margin-bottom: -1%;
+
 }
 @media screen and (max-width: 1024px) {
     .regisall {

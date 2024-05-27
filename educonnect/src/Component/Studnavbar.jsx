@@ -11,11 +11,11 @@ class Studnavbar extends Component{
     };
     render(){
         return(
+            <>
             <nav className="Studentsidebar"> 
                 <div className='stdnav_menu'>
                         {Studentlink.map((item, index) => ( 
-                                <NavLink to={item.url} key={index} className="stdlinks"
-                                    activeClassName="active">
+                                <NavLink to={item.url} key={index} className="stdlinks">
                                     <div className="stdsideicon">{item.icon}</div>
                                     <div className="stdsidetext">{item.title}</div>
                                 </NavLink>
@@ -23,6 +23,7 @@ class Studnavbar extends Component{
           
          </div>
          </nav>
+         </>
         );
     }
 }

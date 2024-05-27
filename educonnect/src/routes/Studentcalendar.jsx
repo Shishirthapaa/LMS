@@ -1,6 +1,7 @@
 import Topbar from '../Component/Topbar';
 import Studnavbar from '../Component/Studnavbar';
-import "../Css/Studdashcss.css";
+import Calendar from '../Component/Calendar';
+import "../Css/Studentcalendar.css";
 
 function Studentcalendar(){
     return(
@@ -10,6 +11,11 @@ function Studentcalendar(){
         </div>
         <div className='siderrr'>
         <Studnavbar/>
+        </div>
+        <div className='stdcalall'>
+            <div className='stdcalbox'>
+            <Calendar />
+            </div>
         </div>
         </>
     )

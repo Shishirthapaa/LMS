@@ -14,8 +14,7 @@ class Adminnavbar extends Component{
             <nav className="Adminsidebar"> 
                 <div className='admnav_menu'>
                         {Adminlink.map((item, index) => ( 
-                                <NavLink to={item.url} key={index} className="admlinks"
-                                    activeClassName="active">
+                                <NavLink to={item.url} key={index} className="admlinks">
                                     <div className="admsideicon">{item.icon}</div>
                                     <div className="admsidetext">{item.title}</div>
                                 </NavLink>

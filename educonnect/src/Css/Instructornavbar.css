@@ -1,0 +1,170 @@
+.Instructorsidebar {
+    width:140%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    position: relative; top: 10%;
+    height: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    z-index: 9999;
+    background-color: white;
+}
+
+.instnav_menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 1px;
+    height: 100%;
+
+}
+.instlinks{
+    text-decoration: none;
+    color:black;
+    opacity: 72%;
+    height: 30%;
+
+}
+.instlinks:hover{
+    opacity: 100%;
+    color: #bf93f4;
+}
+.instlinks.active {
+    
+    background-color: #7E30E1;
+    color: white;
+    opacity: 110%;
+}
+.inst-active{
+    background-color: #7E30E1;
+    color: white;
+    opacity: 110%;
+}
+
+
+.instsidetext {
+   
+    font-size: 23px;
+   
+}
+
+.instsideicon {
+    font-size: 40px;
+    padding-top: 5%;
+    
+}
+@media screen and (max-width:1024px) {
+    .Instructorsidebar{
+        width:130%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 7%;
+        position: relative; top: 10%;
+        height: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        z-index: 9999;
+        background-color: white;
+    }
+    .instnav_menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-top: 1px;
+        height: 100%;
+    
+    }
+    .instlinks{
+        text-decoration: none;
+        color:black;
+        opacity: 72%;
+        height: 30%;
+    
+    }
+    .instlinks:hover{
+        opacity: 100%;
+        color: #bf93f4;
+    }
+    .inst-active{
+        background-color: #7E30E1;
+        color: white;
+        opacity: 110;
+    }
+    .instsidetext {
+   
+        font-size: 18px;
+       
+    }
+    
+    .instsideicon {
+        font-size: 35px;
+        padding-top: 10%;
+        
+    }
+    .instlinks.active {
+    
+        background-color: #7E30E1;
+        color: white;
+        opacity: 110%;
+    }
+}
+@media screen and (max-width:768px){
+    .Instructorsidebar{
+        width:100%;
+        display: flex;
+        flex-direction: row;
+        bottom: 0;
+        height: auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        z-index: 9999;
+        background-color: white;
+        position: relative;
+    }
+    .instnav_menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: auto;
+        width: 100%;
+        align-items: start;
+    
+    }
+    .instlinks{
+        text-decoration: none;
+        color:black;
+        opacity: 72%;
+        height: 100%;
+        width: 100%;
+    
+    }
+    .instlinks:hover{
+        opacity: 100%;
+        color: #bf93f4;
+    }
+    .inst-active{
+        background-color: #7E30E1;
+        color: white;
+        opacity: 110;
+    }
+    .instsidetext {
+   
+        font-size: 18px;
+        display: none;
+       
+    }
+    
+    .instsideicon {
+        font-size: 40px;
+        padding-top: 0%;
+        
+    }
+    .instlinks.active {
+    
+        background-color: #7E30E1;
+        color: white;
+        opacity: 110%;
+    }
+
+}

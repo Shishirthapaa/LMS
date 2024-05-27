@@ -28,10 +28,21 @@ const Login=()=>{
         .then(result => {
             console.log('Login result:',result);
 
-            const { accessToken, userType } = result.data;
+            const { accessToken, userType, studentName, instructorName, studentId, instructorId, adminId, studentEmail, instructorEmail, adminEmail } = result.data;
                     if (accessToken && userType) {
-                    localStorage.setItem('token', accessToken);
-                    localStorage.setItem('userType', userType);
+                    sessionStorage.setItem('token', accessToken);
+                    sessionStorage.setItem('userType', userType);
+                    sessionStorage.setItem('studentName', studentName);
+                    sessionStorage.setItem('instructorName', instructorName);
+                    sessionStorage.setItem('adminId', adminId);
+                    sessionStorage.setItem('studentEmail', studentEmail);
+                    sessionStorage.setItem('instructorEmail', instructorEmail);
+                    sessionStorage.setItem('adminEmail', adminEmail);
+                    if (userType === 'student') {
+                        sessionStorage.setItem('studentId', studentId);
+                    } else if (userType === 'instructor') {
+                        sessionStorage.setItem('instructorId', instructorId);
+                    }
 
                     switch (userType) {
                         case 'student':
@@ -51,8 +62,17 @@ const Login=()=>{
             }
         
     }).catch((err) => {
-        console.log(err);
-        alert('Login failed.');
+        if (err.response) {
+            if (err.response.status === 401 && err.response.data === "Incorrect password") {
+              alert('Incorrect password.');
+            } else if (err.response.status === 404 && err.response.data === "Invalid user") {
+              alert('Invalid user.');
+            } else {
+              alert('Login failed.');
+            }
+          } else {
+            alert('Login failed.');
+          }
     });
     };
     
@@ -103,9 +123,9 @@ return(
 
     <form id="logeslog"onSubmit={handleSubmit}> {/* a form is created where email and password is entered by user and stored */}
                     <label id="email" htmlFor="email">Email</label>
-                    <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder=" youremail@gmail.com" id="emailbox" name="email" required/> 
+                    <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="youremail@gmail.com" id="emailbox" name="email" required/> 
                     <label id="password" htmlFor="password">Password</label>
-                    <input value={password} onChange={(e) => setPass(e.target.value)} type={showPassword.password ? 'text':'password'} placeholder=" **********" id="passwordbox" name="password" required/>
+                    <input value={password} onChange={(e) => setPass(e.target.value)} type={showPassword.password ? 'text':'password'} placeholder="Password" id="passwordbox" name="password" required/>
                     <i
                     className={`fa-solid fa-eye${showPassword.password ? '' : '-slash'}`}
                     id='eye3'
@@ -113,17 +133,15 @@ return(
                     ></i>
                     <button id="button2log" type='submit'>LOGIN</button> 
                 </form>
-                <div className='forpw'>
+                {/* <div className='forpw'>
                 <a>Forgot Password? </a>
                     <Link to="/forgotpw" id="forgotlink">
-                        <a id="resetlog" >Reset</a>   {/* When buuton clicked it moves to Forgot Password page */}
+                        <a id="resetlog" >Reset</a>
                     </Link>
-                </div>
+                </div> */}
                 
     </div>
     </div>
-    
-        
     
     </>
 )

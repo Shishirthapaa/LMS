@@ -1,0 +1,226 @@
+.instmessagecontainer {
+    display: flex;
+    width: 100%;
+    min-height: 77vh;
+    max-height: 77vh;
+}
+
+.instgroupnames {
+    flex: 1;
+    padding: 10px;
+    flex-basis: 20%; 
+    border-right: 2px solid #808080;
+}
+
+.instlivechat {
+    flex: 3;
+    flex-basis: 50%; 
+    padding: 1px;
+    border-right: 2px solid #808080;
+
+}
+
+
+.instgroupmembers {
+    flex: 1;
+    padding: 10px;
+    flex-basis: 20%; 
+}
+.instgrouplist{
+    height: 85%;
+    margin-bottom: 16%;
+    
+}
+.instgrouplist ul {
+    list-style: none;
+    padding: 10px;
+    text-align: start;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white;
+}
+
+
+.instcreategroup{
+    display: flex;
+    flex-direction: row;
+    margin-top: 16%;
+}
+.groupnameinput{
+    border-radius: 5px; 
+    padding-left: 2px;
+}
+#creategroupbtn{
+    color:white;
+    background-color: #7E30E1;
+    width: 4.5rem;
+    height: 2rem;
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.2s ease-in-out;
+    font-size: 14px;
+    font-weight: 200;
+    margin-left: 2%;
+}
+#creategroupbtn:hover{
+    background-color:#bf93f4;
+    color:#7E30E1;
+}
+.instmemberslist{
+    height: 21%;
+    overflow: auto;
+}
+.instmemberslist ul{
+    list-style: none;
+    padding: 2px;
+    text-align: start;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: white;
+    overflow: auto;
+}
+.instaddmember{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1%;
+    height: 5%;
+}
+.membernameinput{
+    border-radius: 5px; 
+    padding-left: 2px;
+    height: 2rem ;
+}
+.addmembersbtn{
+    color:white;
+    background-color: #7E30E1;
+    width: 10rem;
+    height: 2rem;
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.2s ease-in-out;
+    font-size: 14px;
+    font-weight: 200;
+    margin-left: 2%;
+    margin-top: 10%;
+}
+.addmembersbtn:hover{
+    background-color:#bf93f4;
+    color:#7E30E1;
+}
+
+.inststudentlist{
+margin-top: 5%;
+max-height: 173px;
+overflow: auto;
+width: 17rem;
+}
+.instinstructorlist{
+    max-height: 173px;
+    overflow: auto;
+    margin-top: 2%;
+    width: 17rem;
+}
+.inststudentlist ul,
+.instinstructorlist ul {
+    list-style: none;
+    padding: 0;
+}
+
+.inststudentlist ul li,
+.instinstructorlist ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; 
+}
+
+.instgroupnames, .instgroupmembers {
+    flex: 1; 
+}
+
+.instchatalllive{
+    height: 83%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.instchatbubble {
+    max-width: 70%; 
+    margin: 5px;
+    padding: 7px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    height:auto;
+}
+
+.instsendername {
+    font-size: 12px;
+    margin-bottom: 1px;
+}
+
+.instchatbubbleright {
+    padding-top: 2.5%;
+    background-color: #bf93f4; 
+    align-self: flex-end;
+    height: auto;
+    
+}
+
+.instchatbubbleleft {
+    background-color: #E5E5EA; 
+    align-self: flex-start;
+    height: auto;
+    padding-top: 2.5%;
+}
+.instchatdiv{
+    height: 10%;
+    margin-bottom: 2%;
+}
+.chatboxinput{
+    border-radius: 15px;
+    height: 2.5rem;
+    width: 30rem;
+    background-color: #ededed;
+    padding-left: 2%;
+}
+.sendmessageicon{
+    cursor: pointer;
+    margin-left: 2%;
+    margin-bottom: 0.8%;
+    
+}
+.instchatgroupname{
+    height:7% ;
+    margin-top: -1%;
+    background-color:#bf93f4;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.2s ease-in-out;
+    color: black;
+    padding-top: 0.5%;
+    opacity: 80%;
+}
+.instnotaddedtogrp{
+    margin-top: 50%;
+    color: rgb(239, 41, 41);
+}
+
+@media (max-width: 768px) {
+    .instmessagecontainer {
+        flex-direction: column;
+    }
+
+    .instgroupnames,
+    .instlivechat,
+    .instgroupmembers {
+        flex: 1;
+        border: none;
+    }
+
+    .instgroupnames,
+    .instgroupmembers {
+        border-bottom: 1px solid #ccc;
+    }
+}

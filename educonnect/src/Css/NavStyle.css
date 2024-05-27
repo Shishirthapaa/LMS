@@ -7,6 +7,7 @@
     height:14%;
     position: fixed;
     z-index: 9999;
+    background-color: white;
     
 }
 .logooa{
@@ -43,10 +44,10 @@
 .nav-links{
     margin-right: -10px;
     text-decoration: none;
-    color:#7E30E1;
-    font-size: 1.3rem;
+    color:black;
+    font-size: 1.4rem;
     font-weight: 550;
-    padding:0.7rem 0.8rem;
+    padding:0.5rem 0.8rem;
     white-space: nowrap;
 }
 .nav-links:hover{
@@ -55,10 +56,15 @@
     
     
 }
+.nav-links.active {
+    color: #7E30E1;
+    opacity: 110%;
+}
 .nav-links-mobile{
     display: none;
 
 }
+
 .logbut{
     padding:0.5rem 1.6rem;
     white-space: nowrap;

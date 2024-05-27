@@ -1,0 +1,36 @@
+.stdcrsnavbar{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10%;
+    align-items: center;
+    margin-left: 2%;
+}
+.stdcrsnavback,
+.stdcrsnavcontent,
+.stdcrsnavassign,
+.stdcrsnavgrade,
+.stdcrsnavnotify{
+    text-decoration: none;
+    color:black;
+}
+.stdcrsnavback{
+    display: flex;
+}
+.stdcrsnavback.active,
+.stdcrsnavcontent.active,
+.stdcrsnavassign.active,
+.stdcrsnavgrade.active,
+.stdcrsnavnotify.active{
+    background-color: #f2f1f1;
+    color: #7E30E1;
+}
+.stdcrsnavback.active h5,
+.stdcrsnavcontent.active h5,
+.stdcrsnavassign.active h5,
+.stdcrsnavgrade.active h5,
+.stdcrsnavnotify.active h5{
+    font-weight: 600;
+    font-size: 20px;
+}

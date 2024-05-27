@@ -1,0 +1,338 @@
+
+.instheaderrtop{
+    position: fixed;
+    z-index: 1000;
+    height: 10%;
+}
+.instsiderrr{
+    position: fixed;
+    z-index: 999;
+    height: 90%;
+}
+.allinstcard {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-evenly; 
+    background-color: #FFFFFF;
+
+}
+.instrleftcard{
+    display: flex;
+    flex-direction: column;
+    margin-left: 9%;
+    margin-top: 7.5%;
+    background-color: #FFFFFF;
+
+}
+
+.instlefttopcard{
+    width: 760px; 
+    height: 100px; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 12px;
+    padding: 20px;
+    margin-left: 5%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    padding-top: 3%;
+    gap: 2%;
+}
+#instname{
+    color: #7E30E1;
+}
+.instleftbottomcard{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3%;
+    background-color: #FFFFFF;
+
+}
+.instbottomleftcard{
+    width: 500px; 
+    height: 505px;  
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 12px;
+    padding: 15px;
+    margin-left: 5%;
+    background-color: white;
+    overflow-y: auto;
+
+}
+.instbottomrightcard{
+    width: 300px; 
+    height: 505px; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 12px;
+    padding: 20px;
+    margin-left: 5%;
+    background-color: white;
+
+}
+.instrrightcard{
+    display: flex;
+    flex-direction: column;
+    margin-top: 7.5%;
+    background-color: #FFFFFF;
+
+}
+.righttop{
+    width: 470px; 
+    height: 300px;  
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: white;
+
+}
+.rightbottom{
+    width: 470px; 
+    height: 300px; 
+    margin-top: 6%; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 12px;
+    padding: 10px;
+    background-color: white;
+
+}
+.card-link-instevents{
+    text-decoration: none;
+
+}
+#welinstdashe{
+    color: black;
+}
+#welinstdashc{
+    color: black;
+}
+.react-calendar {
+    width: auto !important; 
+    height: auto !important; 
+    border: none !important;
+  }
+.instnoticedetails{
+    margin-top: 5%;
+}
+.instnoticecoursename{
+    font-weight: 600;
+    font-size: 17px;
+    display: flex;
+    align-self: start;
+    margin-bottom: 2%;
+}
+.instnoticedesc{
+    font-size: 14px;
+    font-weight: normal;
+    opacity: 100%;
+    text-align: start;
+    margin-bottom: 1%;
+}
+.instnoticeinfo{
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+}
+.instnoticeteacher{
+    font-size: 14px;
+    text-align: start;
+    margin-bottom: 0%;
+    font-weight: 500;
+    opacity: 95%;
+}
+.instnoticedate{
+    font-size: 14px;
+    text-align: end;
+    margin-bottom: 0%;
+    font-weight: 500;
+    opacity: 95%;
+}
+.instnoticeseparator{
+    height: 1.5px; 
+    background-color: rgb(0, 0, 0);
+    margin: 12px 0;
+    opacity: 80%;
+}
+@media screen and (max-width:1024px) {
+    
+    .allinstcard {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-evenly; 
+    }
+    .instrleftcard{
+        display: flex;
+        flex-direction: column;
+        margin-left: 11%;
+        margin-top: 11%;
+    }
+    .lefttopcard{
+        width: 740px; 
+        height: 150px; 
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 12px;
+        padding: 20px;
+        margin-left: 5%;
+    }
+    .leftbottomcard{
+        display: flex;
+        flex-direction: row;
+        margin-top: 4%;
+    }
+    .bottomleftcard{
+        width: 465px; 
+        height: 455px;  
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 12px;
+        padding: 20px;
+        margin-left: 5%;
+    }
+    .bottomrightcard{
+        width: 315px; 
+        height: 455px; 
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 12px;
+        padding: 20px;
+        margin-left: 5%;
+    }
+    .instrrightcard{
+        display: flex;
+        flex-direction: column;
+        margin-top: 3%;
+        margin-left: 15%;
+    }
+    .righttop{
+        width: 500px; 
+        height: 300px;  
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 12px;
+        padding: 20px;
+        background-color: white;
+    
+    }
+    .rightbottom{
+        width: 500px; 
+        height: 300px; 
+        margin-top: 6%; 
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 12px;
+        padding: 20px;
+        background-color: white;
+        margin-bottom: 5%;
+    
+    }
+    #welinstdashc{
+        color: black;
+    }
+}
+@media screen and (max-width:768px) {
+    .instheaderrtop{
+        position: fixed;
+        z-index: 10000;
+        height: 10%;
+    }
+    .instsiderrr{
+        position: fixed;
+        z-index: 9999;
+        height: auto;
+        width: 100%;
+        bottom: 0;
+    }
+    
+    .allinstcard {
+        display: flex; 
+        justify-content: space-evenly; 
+        width: 94%;
+        flex-direction: column;
+        margin-left: -6%;
+    }
+    #welinstdash{
+        font-size: 20px;
+    }
+    #instname{
+        color: #7E30E1;
+        font-size: 20px;
+    }
+    .instrleftcard{
+        display: flex;
+        flex-direction: column;
+        margin-top: 25%;
+        width: 100%;
+        align-self: flex-start;
+    }
+    .lefttopcard{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 90%; 
+        height: 70px; 
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 12px;
+        padding: 20px;
+
+    }
+    .leftbottomcard{
+        display: flex;
+        flex-direction: column;
+        margin-top: 4%;
+    }
+    .bottomleftcard{
+        width: 90%; 
+        height: 250px;  
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 15px;
+        padding: 20px;
+
+    }
+    .bottomrightcard{
+        width: 90%; 
+        height: 250px; 
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 15px;
+        padding: 20px;
+        margin-top: 5%;
+  
+    }
+    .instrrightcard{
+        display: flex;
+        flex-direction: column;
+        margin-top: 5%;
+        width: 100%;
+    }
+    .righttop{
+        width: 90%; 
+        height: 280px;  
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 15px;
+        padding: 20px;
+        background-color: white;
+ 
+    }
+    .rightbottom{
+        width: 90%; 
+        height: 280px; 
+        margin-top: 6%; 
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 15px;
+        padding: 20px;
+        background-color: white;
+        margin-bottom: 22%;
+    }
+    #welinstdashc{
+        color: black;
+    }
+}

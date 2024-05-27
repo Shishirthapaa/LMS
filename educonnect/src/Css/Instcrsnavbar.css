@@ -1,0 +1,39 @@
+.instcrsnavbar{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10%;
+    align-items: center;
+    margin-left: 2%;
+}
+.instcrsnavback,
+.instcrsnavcontent,
+.instcrsnavassign,
+.instcrsnavgrade,
+.instcrsnavstudent,
+.instcrsnavnotify{
+    text-decoration: none;
+    color:black;
+}
+.instcrsnavback{
+    display: flex;
+}
+.instcrsnavback.active,
+.instcrsnavcontent.active,
+.instcrsnavassign.active,
+.instcrsnavgrade.active,
+.instcrsnavstudent.active,
+.instcrsnavnotify.active{
+    background-color: #f2f1f1;
+    color: #7E30E1;
+}
+.instcrsnavback.active h5,
+.instcrsnavcontent.active h5,
+.instcrsnavassign.active h5,
+.instcrsnavgrade.active h5,
+.instcrsnavstudent.active h5,
+.instcrsnavnotify.active h5{
+    font-weight: 600;
+    font-size: 20px;
+}

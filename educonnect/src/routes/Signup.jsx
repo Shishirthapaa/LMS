@@ -6,7 +6,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 export const Signup = () => {
-  const [userName, setUserName] = useState('');
+  const [studentName, setStudentName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -14,7 +14,25 @@ export const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+  const userNameRegex = /^[a-zA-Z]+(?: [a-zA-Z]+)+$/;
   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+  const isValidUserName = (studentName) => {
+    if(!userNameRegex.test(studentName)){
+      return "Not a valid username.";
+    } else{
+      return "valid username";
+    }
+  };
+  const getUsernameColor = () => {
+    if (studentName === '') {
+      return 'black'; 
+    } else if (userNameRegex.test(studentName)) {
+      return 'green';
+    } else {
+      return 'red';
+    }
+  };
 
   const checkPasswordStrength = (password) => {
     if (passwordRegex.test(password)) {
@@ -25,7 +43,7 @@ export const Signup = () => {
   };
   const getPasswordStrengthColor = () => {
     if (password === '') {
-      return 'black'; // or any default color for an empty password
+      return 'black'; 
     } else if (passwordRegex.test(password)) {
       return 'green';
     } else {
@@ -44,16 +62,24 @@ export const Signup = () => {
       alert('Password does not meet the strength requirements.');
       return;
     }
+    if (!userNameRegex.test(studentName)){
+      alert('Not a valid username.');
+      return;
+    }
 
-    axios.post('http://localhost:3001/register', { userName, email, password })
+    axios.post('http://localhost:3001/register', { studentName, email, password })
         .then(result => {
             console.log(result);
             navigate('/login')
             alert('Registration successful.');
         })
         .catch(err => {
-            console.log(err);
-            alert('Registration failed.');
+          console.log(err);
+          if (err.response && err.response.status === 400 && err.response.data.message === 'User with this email already exists') {
+              alert('User with this email already exists.');
+          } else {
+              alert('Registration failed.');
+          }
         });
 };
 const handleTogglePassword = (field) => {
@@ -73,22 +99,27 @@ const handleTogglePassword = (field) => {
           </div>
         <div className="regisall">
             <div className='signhead'>
-                <a id ="head_er">Sign Up</a>
+                <p id ="head_er">Sign Up</p>
             </div>
         <div className='signalltop'>
-          <a id='alreadyacclog'>Already have an account? </a>
+          <p id='alreadyacclog'>Already have an account ? </p>
           <Link to="/login" className='loglinks'>
-            <a id="loglink_l">Login</a>
+            <p id="loglink_l"> Login</p>
           </Link>
         </div>
         
         <form className="signuformm" onSubmit={handleSubmit}>
           <label id='la1' htmlFor='userName'>Username</label>
-          <input value={userName} type='text' placeholder=' Username' id='usernamesignbox' name='username' onChange={(e) => setUserName(e.target.value)} required/>
+          <input value={studentName} type='text' placeholder='Username' id='usernamesignbox' name='username' onChange={(e) => setStudentName(e.target.value)} required/>
+          {studentName !== '' && (
+          <span className=" userNamevalid" style={{ color: getUsernameColor() }}>
+            {isValidUserName(studentName)}
+          </span>
+          )}
           <label id ="la2" htmlFor="email">Email</label>
-          <input value={email} type="email" placeholder=" youremail@gmail.com" id="emailsignbox" name="email" onChange={(e) => setEmail(e.target.value)} required/>
+          <input value={email} type="email" placeholder="youremail@gmail.com" id="emailsignbox" name="email" onChange={(e) => setEmail(e.target.value)} required/>
           <label id ="la3" htmlFor="password">Password</label>
-          <input value={password} type={showPassword ? 'text':'password'} placeholder=" **********" id="passsignbox" name="password" onChange={(e) => setPassword(e.target.value)} required/>
+          <input value={password} type={showPassword ? 'text':'password'} placeholder="Password" id="passsignbox" name="password" onChange={(e) => setPassword(e.target.value)} required/>
           <i
               className={`fa-solid fa-eye${showPassword ? '' : '-slash'}`}
               id='eye1'
@@ -101,7 +132,7 @@ const handleTogglePassword = (field) => {
           </span>
           )}
           <label id ="la4" htmlFor="confirmPassword">Confirm Password</label>
-          <input value={confirmPassword} type={showConfirmPassword ? 'text':'password'} placeholder=" **********" id="conpasssignbox" name="confirmPassword" onChange={(e) => setConfirmPassword(e.target.value)} required/>
+          <input value={confirmPassword} type={showConfirmPassword ? 'text':'password'} placeholder="Confirm Password" id="conpasssignbox" name="confirmPassword" onChange={(e) => setConfirmPassword(e.target.value)} required/>
           <i
               className={`fa-solid fa-eye${showConfirmPassword ? '' : '-slash'}`}
               id='eye2'

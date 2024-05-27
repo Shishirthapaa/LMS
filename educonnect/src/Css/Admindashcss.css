@@ -27,14 +27,14 @@
 
 .admlefttopcard{
     width: 760px; 
-    height: 150px; 
+    height: 100px; 
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 12px;
     padding: 20px;
     margin-left: 5%;
     background-color: white;
-    padding-top: 5%;
+    padding-top: 4%;
     font-size: 20px;
 }
 .admleftbottomcard{
@@ -44,19 +44,20 @@
     margin-top: 3%;
 }
 .admbottomleftcard{
-    width: 485px; 
-    height: 455px;  
+    width: 500px; 
+    height: 505px;  
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 12px;
-    padding: 20px;
+    padding: 15px;
     margin-left: 5%;
     background-color: white;
+    overflow-y: auto;
 
 }
 .admbottomrightcard{
-    width: 315px; 
-    height: 455px; 
+    width: 300px; 
+    height: 505px; 
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 12px;
@@ -80,6 +81,7 @@
     border-radius: 12px;
     padding: 20px;
     background-color: white;
+    
 
 }
 .admrightbottom{
@@ -89,7 +91,7 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 12px;
-    padding: 20px;
+    padding: 10px;
     background-color: white;
 
 }
@@ -113,6 +115,88 @@
     font-size: 18px;
     margin-left: -20px;
 
+}
+.crslistul .crslistli::marker {
+    color: #7E30E1;
+  }
+.card-link-events{
+    text-decoration: none;
+
+}
+#weladmdashe{
+    color: black;
+}
+#weladmdashn{
+    color: black;
+}
+.eventlistul{
+    margin-top: 8%;
+    list-style-type: disc;
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+.eventlistli{
+    font-size: 19px;
+    margin-left: -20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.eventlistul .eventlistli::marker {
+    color: #7E30E1;
+}
+
+.react-calendar {
+    width: auto !important; 
+    height: auto !important;
+    border: none !important; 
+  }
+.admnoticedetails{
+    margin-top: 5%;
+}
+.admnoticecoursename{
+    font-weight: 600;
+    font-size: 17px;
+    display: flex;
+    align-self: start;
+    margin-bottom: 2%;
+}
+.admnoticedesc{
+    font-size: 14px;
+    font-weight: normal;
+    opacity: 100%;
+    text-align: start;
+    margin-bottom: 1%;
+}
+.admnoticeinfo{
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+}
+.admnoticeteacher{
+    font-size: 14px;
+    text-align: start;
+    margin-bottom: 0%;
+    font-weight: 500;
+    opacity: 95%;
+}
+.admnoticedate{
+    font-size: 14px;
+    text-align: end;
+    margin-bottom: 0%;
+    font-weight: 500;
+    opacity: 95%;
+}
+.admnoticeseparator{
+    height: 1.5px; 
+    background-color: rgb(0, 0, 0);
+    margin: 12px 0;
+    opacity: 80%;
 }
 @media screen and (max-width:1024px) {
     
