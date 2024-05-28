@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "educonnect/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "educonnect/build" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "server/index.js"
+    },
+    {
+      "handle": "filesystem"
+    }
+  ],
+  "buildCommand": "npm run build --prefix educonnect",
+  "installCommand": "npm install"
+}
