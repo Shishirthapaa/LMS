@@ -42,8 +42,9 @@ const FetchMessage = require('./Components/FetchMessage');
 
 
 
-const app = express()
-app.use(express.json())
+const app = express();
+
+app.use(express.json());
 app.use(cors());
 
 app.use('/courses', addcourseRouter);
@@ -81,13 +82,15 @@ app.use('/notices', FetchNotice);
 app.use('/lms', FetchMessage);
 
 app.use(cors({
-  origin: 'https://educonnect-by-shishir.vercel.app'
+  origin: 'https://educonnect-by-shishir.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 
 const uri = process.env.MONGODB_URI;
 
-mongoose.connect(uri)
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
   })
