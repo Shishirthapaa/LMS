@@ -11,7 +11,8 @@ function InstStudent  () {
     const [grades, setGrades] = useState([]);
     const [showGradeModal, setShowGradeModal] = useState(false);
 
-    
+    axios.defaults.withCredentials = true;
+
 
         useEffect(() => {
             if (_id) {

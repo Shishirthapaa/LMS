@@ -11,6 +11,8 @@ function InstCourseAccordion() {
   const [folderEditModal, setFolderEditModal] = useState(false);
   const [folderDeleteModal, setFolderDeleteModal] = useState(false);
   const [errors, setErrors] = useState("");
+  
+  axios.defaults.withCredentials = true;
 
   useEffect(() => {
     fetchFolders(_id);

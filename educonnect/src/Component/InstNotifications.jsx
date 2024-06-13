@@ -11,6 +11,8 @@ function InstNotifications  () {
     const [notificationDeleteModal, setNotificationDeleteModal] = useState(false);
     const [errors, setErrors] = useState("");
 
+    axios.defaults.withCredentials = true;
+
 
     useEffect(() => {
         fetchNotifications(_id);

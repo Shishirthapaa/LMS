@@ -9,11 +9,13 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 const handleIconClick = (url, event) => {
   event.preventDefault();
   window.open(url, "_blank");
 };
+axios.defaults.withCredentials = true;
 
 const Aboutuscomp = ({ scrollToContact }) => {
   const contactUsRef = useRef(null);

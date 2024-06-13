@@ -8,6 +8,7 @@ function StdNotifications  () {
     const [notifications, setNotifications] = useState([]);
     const [errors, setErrors] = useState("");
 
+    axios.defaults.withCredentials = true;
 
     useEffect(() => {
         fetchNotifications(_id);

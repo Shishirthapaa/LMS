@@ -42,18 +42,16 @@ const FetchMessage = require('./Components/FetchMessage');
 
 
 
-const app = express();
+const app = express()
 
 app.use(cors({
   origin: ["https://educonnect-by-shishir.vercel.app"],
   methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
 
 app.use(express.json());
 
-
-app.options('*', cors());
 
 app.use('/courses', addcourseRouter);
 app.use('/courses', editcourseRouter);
@@ -104,6 +102,9 @@ mongoose.connect(uri)
 const generateAccessToken = (user) => {
   return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1h' });
 };
+app.get('/', (req, res) => {
+  res.json("Hello");
+})
 
 app.post("/login", async (req, res) => {
     const { email, password, userType } = req.body;

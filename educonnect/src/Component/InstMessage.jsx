@@ -19,6 +19,8 @@ function InstMessage() {
     const [groupDeleteModal, setGroupDeleteModal] = useState(false);
     const [groupAdminName, setGroupAdminName] = useState("");
 
+    axios.defaults.withCredentials = true;
+
     useEffect(() => {
         setLoggedInInstructorId(sessionStorage.getItem('instructorId'));
     }, []);

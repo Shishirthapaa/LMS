@@ -7,6 +7,9 @@ function StdGrade() {
     const { _id } = useParams();
     const [grades, setGrades] = useState([]);
     const [error, setError] = useState("");
+    
+    axios.defaults.withCredentials = true;
+
 
     useEffect(() => {
         fetchGrade(_id);

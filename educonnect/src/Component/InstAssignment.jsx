@@ -11,6 +11,7 @@ function InstAssignment  () {
     const [assignmentDeleteModal, setAssignmentDeleteModal] = useState(false);
     const [errors, setErrors] = useState("");
 
+    axios.defaults.withCredentials = true;
 
     useEffect(() => {
         fetchAssignments(_id);

@@ -16,6 +16,8 @@ const Login=()=>{
     const navigate = useNavigate()
     const [showPassword, setShowPassword] = useState(false);
 
+    axios.defaults.withCredentials = true;
+
     const handleSubmit =(e)=>{
         e.preventDefault();
           if (!userType) {

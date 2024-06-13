@@ -11,6 +11,8 @@ function StdAssignment  () {
     const [file, setFile] = useState(null);
     const [errors, setErrors] = useState("");
     const [submissionStatus, setSubmissionStatus] = useState({});
+    
+    axios.defaults.withCredentials = true;
 
     
 

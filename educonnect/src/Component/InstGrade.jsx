@@ -12,6 +12,9 @@ function InstGrade() {
     const [errors, setErrors] = useState("");
     const marksRegex = /^(100|[1-9][0-9]?)$/;
 
+    axios.defaults.withCredentials = true;
+
+
     useEffect(() => {
         fetchSubmissions(_id);
     }, [_id]);

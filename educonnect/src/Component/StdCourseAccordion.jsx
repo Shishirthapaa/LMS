@@ -8,6 +8,9 @@ function StdCourseAccordion() {
   const { _id } = useParams();
   const [folders, setFolders] = useState([]);
 
+  axios.defaults.withCredentials = true;
+
+
   useEffect(() => {
     fetchFolders(_id);
   }, [_id]);

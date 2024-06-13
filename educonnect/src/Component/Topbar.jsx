@@ -20,6 +20,8 @@ const Topbar = () => {
     const [notices, setNotices] = useState([]);
     const [notificationModal, setNotificationModal] = useState(false);
 
+    axios.defaults.withCredentials = true;
+
 
     
     useEffect(() => {

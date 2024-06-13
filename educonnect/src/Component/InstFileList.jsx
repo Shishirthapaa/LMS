@@ -10,6 +10,9 @@ function InstFileList({ folderId }) {
   const [newFileName, setNewFileName] = useState('');
   const [errors, setErrors] = useState("");
 
+  axios.defaults.withCredentials = true;
+
+
   useEffect(() => {
     fetchFiles(folderId);
   }, [folderId]);

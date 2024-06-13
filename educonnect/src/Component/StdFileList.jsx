@@ -4,6 +4,9 @@ import axios from 'axios';
 
 function StdFileList({ folderId }) {
   const [files, setFiles] = useState([]);
+  
+  axios.defaults.withCredentials = true;
+
 
   useEffect(() => {
     fetchFiles(folderId);

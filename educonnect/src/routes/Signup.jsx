@@ -17,6 +17,8 @@ export const Signup = () => {
   const userNameRegex = /^[a-zA-Z]+(?: [a-zA-Z]+)+$/;
   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
+  axios.defaults.withCredentials = true;
+
   const isValidUserName = (studentName) => {
     if(!userNameRegex.test(studentName)){
       return "Not a valid username.";

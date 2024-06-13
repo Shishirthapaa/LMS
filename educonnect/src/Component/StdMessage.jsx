@@ -17,6 +17,7 @@ function StdMessage() {
     const [loggedInStudentId, setLoggedInStudentId] = useState(null);
     const [groupAdminName, setGroupAdminName] = useState("");
 
+    axios.defaults.withCredentials = true;
 
     useEffect(() => {
         setLoggedInStudentId(sessionStorage.getItem('studentId'));
