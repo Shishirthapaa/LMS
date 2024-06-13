@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require('mongoose');
-const cors = require("cors");
+const cors = require('cors');
 const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken");
 const StudentModel = require('./models/Student');
@@ -44,16 +44,17 @@ const FetchMessage = require('./Components/FetchMessage');
 
 const app = express();
 
-app.use(express.json());
-app.use(cors());
-
 app.use(cors({
-  origin: 'https://educonnect-by-shishir.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  origin: ["https://educonnect-by-shishir.vercel.app"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
+app.use(express.json());
+
+
 app.options('*', cors());
+
 app.use('/courses', addcourseRouter);
 app.use('/courses', editcourseRouter);
 app.use('/courses', deletecourseRouter);
@@ -92,7 +93,7 @@ app.use('/lms', FetchMessage);
 
 const uri = process.env.MONGODB_URI;
 
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(uri)
   .then(() => {
     console.log('Connected to MongoDB');
   })
