@@ -44,7 +44,8 @@ const FetchMessage = require('./Components/FetchMessage');
 
 const app = express()
 app.use(express.json())
-app.use(cors())
+app.use(cors());
+
 app.use('/courses', addcourseRouter);
 app.use('/courses', editcourseRouter);
 app.use('/courses', deletecourseRouter);
@@ -79,11 +80,9 @@ app.use('/courses', EditandDeleteNotification);
 app.use('/notices', FetchNotice);
 app.use('/lms', FetchMessage);
 
-const corsOptions = {
-  origin: 'https://educonnect-by-shishir.vercel.app',
-  optionsSuccessStatus: 200
-};
-app.use(cors(corsOptions));
+app.use(cors({
+  origin: 'https://educonnect-by-shishir.vercel.app'
+}));
 
 
 const uri = process.env.MONGODB_URI;
