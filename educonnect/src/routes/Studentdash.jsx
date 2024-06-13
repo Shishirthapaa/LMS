@@ -25,7 +25,7 @@ function Studentdash(){
 
     const fetchCourses = async () =>{
         try{
-            const response =await fetch('http://localhost:3001/courses/addcourses');
+            const response =await fetch('https://lms-api-cyan.vercel.app/courses/addcourses');
             if(!response.ok){
                 throw new Error('failed to fetch courses');
             }
@@ -41,7 +41,7 @@ function Studentdash(){
 
     const fetchEvents = async ()=>{
         try{
-            const response = await fetch('http://localhost:3001/events/addevents');
+            const response = await fetch('https://lms-api-cyan.vercel.app/events/addevents');
             if(!response.ok){
                 throw new Error('Failed to fetch events');
             }
@@ -54,7 +54,7 @@ function Studentdash(){
     const fetchStudentData = async () => {
         try {
             const token = sessionStorage.getItem('token');
-            const response = await fetch(`http://localhost:3001/details/students/${studentId}`, {
+            const response = await fetch(`https://lms-api-cyan.vercel.app/details/students/${studentId}`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -71,7 +71,7 @@ function Studentdash(){
     };
     const fetchNotice = async () =>{
         try{
-            const response = await fetch(`http://localhost:3001/notices/notifications`);
+            const response = await fetch(`https://lms-api-cyan.vercel.app/notices/notifications`);
             if (!response.ok){
                 throw new Error('Failed to fetch Notice');
             } 

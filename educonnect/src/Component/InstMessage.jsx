@@ -35,7 +35,7 @@ function InstMessage() {
                 setMessages([]);
                 return;
             }
-            const response = await axios.get(`http://localhost:3001/lms/messages/${selectedGroup._id}`);
+            const response = await axios.get(`https://lms-api-cyan.vercel.app/lms/messages/${selectedGroup._id}`);
             setMessages(response.data);
         } catch (error) {
             console.error('Error fetching messages:', error);
@@ -44,7 +44,7 @@ function InstMessage() {
 
     const fetchGroups = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/lms/groups');
+            const response = await axios.get('https://lms-api-cyan.vercel.app/lms/groups');
             setGroups(response.data);
         } catch (error) {
             console.error('Error fetching groups:', error);
@@ -53,7 +53,7 @@ function InstMessage() {
 
     const fetchStudents = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/lms/students');
+            const response = await axios.get('https://lms-api-cyan.vercel.app/lms/students');
             setStudents(response.data);
         } catch (error) {
             console.error('Error fetching students:', error);
@@ -62,7 +62,7 @@ function InstMessage() {
 
     const fetchInstructors = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/lms/instructors');
+            const response = await axios.get('https://lms-api-cyan.vercel.app/lms/instructors');
             setInstructors(response.data);
         } catch (error) {
             console.error('Error fetching instructors:', error);
@@ -99,7 +99,7 @@ function InstMessage() {
                 instructors: selectedInstructors
             });
 
-            const response = await axios.post(`http://localhost:3001/lms/groups/${selectedGroup._id}/members/add`, {
+            const response = await axios.post(`https://lms-api-cyan.vercel.app/lms/groups/${selectedGroup._id}/members/add`, {
                 students: studentIds,
                 instructors: instructorIds,
                 userId: loggedInInstructorId
@@ -149,7 +149,7 @@ function InstMessage() {
                 content: newMessage,
                 groupId: selectedGroup._id
             };
-            await axios.post('http://localhost:3001/lms/messages', messageData)
+            await axios.post('https://lms-api-cyan.vercel.app/lms/messages', messageData)
             setMessages([...messages, { content: newMessage, senderId: { _id: loggedInInstructorId } }]);
             setNewMessage('');
         } catch (error) {
@@ -163,7 +163,7 @@ function InstMessage() {
                 alert('Please enter a group name');
                 return;
             }
-            const response = await axios.post('http://localhost:3001/lms/groups', {
+            const response = await axios.post('https://lms-api-cyan.vercel.app/lms/groups', {
                 name: groupName.trim(),
                 groupAdmin: loggedInInstructorId,
             });
@@ -177,7 +177,7 @@ function InstMessage() {
     const handleGroupSelection = async (group) => {
         setSelectedGroup(group);
         try {
-            const response = await axios.get(`http://localhost:3001/lms/groups/${group._id}/members`);
+            const response = await axios.get(`https://lms-api-cyan.vercel.app/lms/groups/${group._id}/members`);
             setGroupMembers(response.data);
             setGroupAdminName(response.data.groupAdmin.instructorName)
             fetchMessages();
@@ -188,7 +188,7 @@ function InstMessage() {
 
     const handleRemoveStudent = async (studentId) => {
         try {
-            await axios.delete(`http://localhost:3001/lms/groups/${selectedGroup._id}/students/${studentId}`);
+            await axios.delete(`https://lms-api-cyan.vercel.app/lms/groups/${selectedGroup._id}/students/${studentId}`);
             setGroupMembers({
                 ...groupMembers,
                 students: groupMembers.students.filter(student => student._id !== studentId)
@@ -200,7 +200,7 @@ function InstMessage() {
 
     const handleRemoveInstructor = async (instructorId) => {
         try {
-            await axios.delete(`http://localhost:3001/lms/groups/${selectedGroup._id}/instructors/${instructorId}`);
+            await axios.delete(`https://lms-api-cyan.vercel.app/lms/groups/${selectedGroup._id}/instructors/${instructorId}`);
             setGroupMembers({
                 ...groupMembers,
                 instructors: groupMembers.instructors.filter(instructor => instructor._id !== instructorId)
@@ -217,7 +217,7 @@ function InstMessage() {
                 console.error('No group selected');
                 return;
             }
-            await axios.delete(`http://localhost:3001/lms/groups/${selectedGroup._id}`);
+            await axios.delete(`https://lms-api-cyan.vercel.app/lms/groups/${selectedGroup._id}`);
             fetchGroups();
             setGroupDeleteModal(false);
             setSelectedGroup(null);

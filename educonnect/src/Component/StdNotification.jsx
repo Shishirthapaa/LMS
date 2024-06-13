@@ -15,7 +15,7 @@ function StdNotifications  () {
 
   const fetchNotifications = async (courseId) => {
     try {
-      const response = await axios.get(`http://localhost:3001/courses/${courseId}/notifications`);
+      const response = await axios.get(`https://lms-api-cyan.vercel.app/courses/${courseId}/notifications`);
       if (response.status === 200) {
         setNotifications(response.data);
       } else {

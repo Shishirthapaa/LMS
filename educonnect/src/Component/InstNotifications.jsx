@@ -18,7 +18,7 @@ function InstNotifications  () {
 
   const fetchNotifications = async (courseId) => {
     try {
-      const response = await axios.get(`http://localhost:3001/courses/${courseId}/notifications`);
+      const response = await axios.get(`https://lms-api-cyan.vercel.app/courses/${courseId}/notifications`);
       if (response.status === 200) {
         setNotifications(response.data);
       } else {
@@ -31,7 +31,7 @@ function InstNotifications  () {
 
   const handleEditNotification = async () => {
     try {
-      const response = await axios.put(`http://localhost:3001/courses/notifications/${selectedNotification._id}`, {
+      const response = await axios.put(`https://lms-api-cyan.vercel.app/courses/notifications/${selectedNotification._id}`, {
         notificationDescription: selectedNotification.description,
         notificationDate: selectedNotification.date, 
         notificationTeacher: selectedNotification.teacher
@@ -53,7 +53,7 @@ function InstNotifications  () {
   };
   const handleDeleteNotification = async () => {
     try {
-      const response = await axios.delete(`http://localhost:3001/courses/notifications/${selectedNotification._id}`);
+      const response = await axios.delete(`https://lms-api-cyan.vercel.app/courses/notifications/${selectedNotification._id}`);
       
       if (response.status === 200) {
         setNotificationDeleteModal(false);

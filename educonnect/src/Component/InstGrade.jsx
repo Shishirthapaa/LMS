@@ -18,7 +18,7 @@ function InstGrade() {
 
     const fetchSubmissions = async (courseId) => {
         try {
-            const response = await axios.get(`http://localhost:3001/courses/${courseId}/submittedassignments`);
+            const response = await axios.get(`https://lms-api-cyan.vercel.app/courses/${courseId}/submittedassignments`);
             if (response.status === 200) {
                 setSubmissions(response.data);
                 const initialGradingStatus = {};
@@ -41,7 +41,7 @@ function InstGrade() {
             return;
         }
         try {
-            const response = await axios.post(`http://localhost:3001/courses/${selectedSubmission.courseId}/gradedsubmissions`, {
+            const response = await axios.post(`https://lms-api-cyan.vercel.app/courses/${selectedSubmission.courseId}/gradedsubmissions`, {
                 courseId: selectedSubmission.courseId,
                 assignmentId: selectedSubmission.assignmentId,
                 studentId: selectedSubmission.studentId,
@@ -77,12 +77,12 @@ function InstGrade() {
         setErrors("");
     }
     const handleFileClick = (submission) => {
-        const fileUrl = `http://localhost:3001/submissions/${submission.fileName}`;
+        const fileUrl = `https://lms-api-cyan.vercel.app/submissions/${submission.fileName}`;
         window.open(fileUrl, '_blank');
     }
     const checkSubmissionGradingStatus = async (submissionId) => {
         try {
-            const response = await axios.get(`http://localhost:3001/courses/checkSubmissionGradingStatus?submissionId=${submissionId}`)
+            const response = await axios.get(`https://lms-api-cyan.vercel.app/courses/checkSubmissionGradingStatus?submissionId=${submissionId}`)
             if (response.status === 200) {
                 setGradingStatus(prevState => ({
                     ...prevState,
@@ -112,7 +112,7 @@ function InstGrade() {
                         </div>
                         <div className='row justify-content-start'>
                             <Card.Text className="text-left" onClick={() => handleFileClick(submission)} style={{ cursor: 'pointer', fontSize: '20px' }}>{submission.fileName}</Card.Text>
-                            <text><a style={{ textDecoration: 'none', fontSize: '18px', color: '#7E30E1' }} href={`http://localhost:3001/submissions/${submission.fileName}`} target="_blank" rel="noopener noreferrer">View File</a></text>
+                            <text><a style={{ textDecoration: 'none', fontSize: '18px', color: '#7E30E1' }} href={`https://lms-api-cyan.vercel.app/submissions/${submission.fileName}`} target="_blank" rel="noopener noreferrer">View File</a></text>
                         </div>
                         <div className="row justify-content-end" >
                             <div className="col-auto">

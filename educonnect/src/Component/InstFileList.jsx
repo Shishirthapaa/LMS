@@ -16,7 +16,7 @@ function InstFileList({ folderId }) {
 
   const fetchFiles = async (folderId) => {
     try {
-      const response = await axios.get(`http://localhost:3001/courses/folders/${folderId}/files`);
+      const response = await axios.get(`https://lms-api-cyan.vercel.app/courses/folders/${folderId}/files`);
       if (response.status === 200) {
         setFiles(response.data);
       } else {
@@ -29,7 +29,7 @@ function InstFileList({ folderId }) {
 
   const handleRenameFile = async () => {
     try {
-      const response = await axios.put(`http://localhost:3001/courses/folders/files/${selectedFile._id}`, { newName: newFileName });
+      const response = await axios.put(`https://lms-api-cyan.vercel.app/courses/folders/files/${selectedFile._id}`, { newName: newFileName });
       if (response.status === 200) {
         const updatedFiles = files.map((file) => {
           if (file._id === selectedFile._id) {
@@ -50,7 +50,7 @@ function InstFileList({ folderId }) {
 
   const handleDeleteFile = async () => {
     try {
-      const response = await axios.delete(`http://localhost:3001/courses/folders/files/${selectedFile._id}`);
+      const response = await axios.delete(`https://lms-api-cyan.vercel.app/courses/folders/files/${selectedFile._id}`);
       if (response.status === 200) {
         const updatedFiles = files.filter((file) => file._id !== selectedFile._id);
         setFiles(updatedFiles);
@@ -87,7 +87,7 @@ const handleCloseFileDeleteModal = () =>{
 }
 
 const handleFileClick = (file) =>{
-  const fileUrl = `http://localhost:3001/uploads/${file.path}`;
+  const fileUrl = `https://lms-api-cyan.vercel.app/uploads/${file.path}`;
   window.open(fileUrl, '_blank');
 }
   return (

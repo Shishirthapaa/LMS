@@ -15,7 +15,7 @@ function StdGrade() {
     const fetchGrade = async (courseId) => {
         try {
             const studentId = sessionStorage.getItem('studentId');
-            const response = await axios.get(`http://localhost:3001/courses/${courseId}/grades` , {
+            const response = await axios.get(`https://lms-api-cyan.vercel.app/courses/${courseId}/grades` , {
                  params: { studentId }
                 });
             if (response.status === 200) {

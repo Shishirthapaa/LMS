@@ -18,7 +18,7 @@ function InstructorCourseStudents(){
 
     const fetchCourseDetails = async (courseId) => {
         try {
-            const response = await fetch(`http://localhost:3001/courses/addcourses/${courseId}`);
+            const response = await fetch(`https://lms-api-cyan.vercel.app/courses/addcourses/${courseId}`);
             if (!response.ok) {
                 throw new Error('Failed to fetch course details');
             }

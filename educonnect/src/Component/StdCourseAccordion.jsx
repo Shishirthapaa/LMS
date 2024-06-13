@@ -15,7 +15,7 @@ function StdCourseAccordion() {
 
   const fetchFolders = async (courseId) => {
     try {
-      const response = await axios.get(`http://localhost:3001/courses/${courseId}/folders`);
+      const response = await axios.get(`https://lms-api-cyan.vercel.app/courses/${courseId}/folders`);
       if (response.status === 200) {
         setFolders(response.data);
       } else {

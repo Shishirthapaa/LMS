@@ -18,7 +18,7 @@ function InstAssignment  () {
 
   const fetchAssignments = async (courseId) => {
     try {
-      const response = await axios.get(`http://localhost:3001/courses/${courseId}/assignments`);
+      const response = await axios.get(`https://lms-api-cyan.vercel.app/courses/${courseId}/assignments`);
       if (response.status === 200) {
         setAssignments(response.data);
       } else {
@@ -31,7 +31,7 @@ function InstAssignment  () {
 
   const handleEditAssignment = async () => {
     try {
-      const response = await axios.put(`http://localhost:3001/courses/assignments/${selectedAssignment._id}`, {
+      const response = await axios.put(`https://lms-api-cyan.vercel.app/courses/assignments/${selectedAssignment._id}`, {
         assignmentName: selectedAssignment.name,
         assignmentDescription: selectedAssignment.description, 
         assignmentDate: selectedAssignment.date
@@ -53,7 +53,7 @@ function InstAssignment  () {
   };
   const handleDeleteAssignment = async () => {
     try {
-      const response = await axios.delete(`http://localhost:3001/courses/assignments/${selectedAssignment._id}`);
+      const response = await axios.delete(`https://lms-api-cyan.vercel.app/courses/assignments/${selectedAssignment._id}`);
       
       if (response.status === 200) {
         setAssignmentDeleteModal(false);

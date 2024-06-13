@@ -67,7 +67,7 @@ export const Signup = () => {
       return;
     }
 
-    axios.post('http://localhost:3001/register', { studentName, email, password })
+    axios.post('https://lms-api-cyan.vercel.app/register', { studentName, email, password })
         .then(result => {
             console.log(result);
             navigate('/login')

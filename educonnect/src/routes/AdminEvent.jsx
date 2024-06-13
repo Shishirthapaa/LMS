@@ -25,7 +25,7 @@ function AdminEvent(){
 },[]);
 const fetchEvents = async () => {
     try {
-        const response = await fetch('http://localhost:3001/events/addevents');
+        const response = await fetch('https://lms-api-cyan.vercel.app/events/addevents');
         if (!response.ok) {
             throw new Error('Failed to fetch events');
         }
@@ -86,7 +86,7 @@ const fetchEvents = async () => {
             return;
         }
         try {
-            const response = await fetch('http://localhost:3001/events/addevents', {
+            const response = await fetch('https://lms-api-cyan.vercel.app/events/addevents', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -125,7 +125,7 @@ const fetchEvents = async () => {
             setError('Selected event does not have a valid ID');
             return;
         } 
-          const response = await fetch(`http://localhost:3001/events/editevents/${selectedEvent._id}`, {
+          const response = await fetch(`https://lms-api-cyan.vercel.app/events/editevents/${selectedEvent._id}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
@@ -155,7 +155,7 @@ const fetchEvents = async () => {
     
       const handleDeleteEvent = async () => {
         try {
-          const response = await fetch(`http://localhost:3001/events/deleteevents/${selectedEvent._id}`, {
+          const response = await fetch(`https://lms-api-cyan.vercel.app/events/deleteevents/${selectedEvent._id}`, {
             method: 'DELETE',
           });
           if (!response.ok) {

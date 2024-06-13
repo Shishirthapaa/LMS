@@ -32,7 +32,7 @@ function InstructorCourseAssignment(){
 
     const fetchCourseDetails = async (courseId) => {
         try {
-            const response = await fetch(`http://localhost:3001/courses/addcourses/${courseId}`);
+            const response = await fetch(`https://lms-api-cyan.vercel.app/courses/addcourses/${courseId}`);
             if (!response.ok) {
                 throw new Error('Failed to fetch course details');
             }
@@ -47,7 +47,7 @@ function InstructorCourseAssignment(){
             console.log('Assignment Name:', assignmentName);
             console.log('Assignment Date:', assignmentDate);
 
-            await axios.post(`http://localhost:3001/courses/${_id}/assignments`, {assignmentName, assignmentDescription, assignmentDate});
+            await axios.post(`https://lms-api-cyan.vercel.app/courses/${_id}/assignments`, {assignmentName, assignmentDescription, assignmentDate});
             alert('Assignment created Successfully!');
             handleClosecreateAssignmentModal()
             setErrors("");

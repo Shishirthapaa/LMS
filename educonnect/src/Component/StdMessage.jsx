@@ -36,7 +36,7 @@ function StdMessage() {
                 setMessages([]);
                 return;
             }
-            const response = await axios.get(`http://localhost:3001/lms/messages/${selectedGroup._id}`);
+            const response = await axios.get(`https://lms-api-cyan.vercel.app/lms/messages/${selectedGroup._id}`);
             setMessages(response.data);
         } catch (error) {
             console.error('Error fetching messages:', error);
@@ -44,7 +44,7 @@ function StdMessage() {
     };
     const fetchGroups = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/lms/groups');
+            const response = await axios.get('https://lms-api-cyan.vercel.app/lms/groups');
             setGroups(response.data);
         } catch (error) {
             console.error('Error fetching groups:', error);
@@ -52,7 +52,7 @@ function StdMessage() {
     };
     const fetchStudents = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/lms/students');
+            const response = await axios.get('https://lms-api-cyan.vercel.app/lms/students');
             setStudents(response.data);
         } catch (error) {
             console.error('Error fetching students:', error);
@@ -61,7 +61,7 @@ function StdMessage() {
 
     const fetchInstructors = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/lms/instructors');
+            const response = await axios.get('https://lms-api-cyan.vercel.app/lms/instructors');
             setInstructors(response.data);
         } catch (error) {
             console.error('Error fetching instructors:', error);
@@ -85,7 +85,7 @@ function StdMessage() {
                 content: newMessage,
                 groupId: selectedGroup._id
             }; 
-            await axios.post('http://localhost:3001/lms/messages', messageData);
+            await axios.post('https://lms-api-cyan.vercel.app/lms/messages', messageData);
             setMessages([...messages, { content: newMessage, senderId: { _id: loggedInStudentId }}]);
             setNewMessage('');
         } catch (error) {
@@ -96,7 +96,7 @@ function StdMessage() {
     const handleGroupSelection = async (group) => {
         setSelectedGroup(group);
         try {
-            const response = await axios.get(`http://localhost:3001/lms/groups/${group._id}/members`);
+            const response = await axios.get(`https://lms-api-cyan.vercel.app/lms/groups/${group._id}/members`);
             setGroupMembers(response.data);
             setGroupAdminName(response.data.groupAdmin.instructorName)
         } catch (error) {

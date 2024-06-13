@@ -19,7 +19,7 @@ function StudentCoursedash(){
 
     const fetchCourseDetails = async (courseId) => {
         try {
-            const response = await fetch(`http://localhost:3001/courses/addcourses/${courseId}`);
+            const response = await fetch(`https://lms-api-cyan.vercel.app/courses/addcourses/${courseId}`);
             if (!response.ok) {
                 throw new Error('Failed to fetch course details');
             }
@@ -32,7 +32,7 @@ function StudentCoursedash(){
     
     const fetchFolders = async (courseId) => {
         try{ 
-            const response = await axios.get(`http://localhost:3001/courses/${courseId}/folders`);
+            const response = await axios.get(`https://lms-api-cyan.vercel.app/courses/${courseId}/folders`);
             if (response.status === 200) {
                 setFolders(response.data);
             } else {

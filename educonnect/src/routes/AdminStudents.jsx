@@ -23,7 +23,7 @@ const Admstudentudent =()=> {
         },[]);
         const fetchStudents = async () =>{
             try{
-                const response = await fetch('http://localhost:3001/students/addstudents');
+                const response = await fetch('https://lms-api-cyan.vercel.app/students/addstudents');
                 if(!response.ok){
                     throw new Error('Failed to fetch students.');
                 }
@@ -77,7 +77,7 @@ const Admstudentudent =()=> {
                 setError('Selected student does not have a valid ID');
                 return;
             } 
-              const response = await fetch(`http://localhost:3001/students/editstudents/${selectedStudent._id}`, {
+              const response = await fetch(`https://lms-api-cyan.vercel.app/students/editstudents/${selectedStudent._id}`, {
                 method: 'PUT',
                 headers: {
                   'Content-Type': 'application/json',
@@ -107,7 +107,7 @@ const Admstudentudent =()=> {
         
           const handleDeleteStudent = async () => {
             try {
-              const response = await fetch(`http://localhost:3001/students/deletestudents/${selectedStudent._id}`, {
+              const response = await fetch(`https://lms-api-cyan.vercel.app/students/deletestudents/${selectedStudent._id}`, {
                 method: 'DELETE',
               });
               if (!response.ok) {

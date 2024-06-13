@@ -11,7 +11,7 @@ function StdFileList({ folderId }) {
 
   const fetchFiles = async (folderId) => {
     try {
-      const response = await axios.get(`http://localhost:3001/courses/folders/${folderId}/files`);
+      const response = await axios.get(`https://lms-api-cyan.vercel.app/courses/folders/${folderId}/files`);
       if (response.status === 200) {
         setFiles(response.data);
       } else {
@@ -23,7 +23,7 @@ function StdFileList({ folderId }) {
   };
 
 const handleFileClick = (file) =>{
-  const fileUrl = `http://localhost:3001/uploads/${file.path}`;
+  const fileUrl = `https://lms-api-cyan.vercel.app/uploads/${file.path}`;
   window.open(fileUrl, '_blank');
 }
   return (

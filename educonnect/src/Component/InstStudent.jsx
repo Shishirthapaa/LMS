@@ -23,7 +23,7 @@ function InstStudent  () {
 
   const fetchStudents = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/courses/students`);
+      const response = await axios.get(`https://lms-api-cyan.vercel.app/courses/students`);
       if (response.status === 200) {
         setStudents(response.data);
       } else {
@@ -43,7 +43,7 @@ function InstStudent  () {
   }
   const fetchGrades = async (courseId, studentId) => {
     try {
-        const response = await axios.get(`http://localhost:3001/courses/${courseId}/progress`, {
+        const response = await axios.get(`https://lms-api-cyan.vercel.app/courses/${courseId}/progress`, {
             params: { studentId }
         });
         if (response.status === 200) {

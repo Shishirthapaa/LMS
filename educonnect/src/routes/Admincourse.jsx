@@ -29,7 +29,7 @@ function Admincourse(){
 
 const fetchCourses = async () => {
     try {
-        const response = await fetch('http://localhost:3001/courses/addcourses');
+        const response = await fetch('https://lms-api-cyan.vercel.app/courses/addcourses');
         if (!response.ok) {
             throw new Error('Failed to fetch courses');
         }
@@ -84,7 +84,7 @@ const fetchCourses = async () => {
             return;
         }
         try {
-            const response = await fetch('http://localhost:3001/courses/addcourses', {
+            const response = await fetch('https://lms-api-cyan.vercel.app/courses/addcourses', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -124,7 +124,7 @@ const fetchCourses = async () => {
             setError('Selected course does not have a valid ID');
             return;
         } 
-          const response = await fetch(`http://localhost:3001/courses/editcourses/${selectedCourse._id}`, {
+          const response = await fetch(`https://lms-api-cyan.vercel.app/courses/editcourses/${selectedCourse._id}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
@@ -155,7 +155,7 @@ const fetchCourses = async () => {
     
       const handleDeleteCourse = async () => {
         try {
-          const response = await fetch(`http://localhost:3001/courses/deletecourses/${selectedCourse._id}`, {
+          const response = await fetch(`https://lms-api-cyan.vercel.app/courses/deletecourses/${selectedCourse._id}`, {
             method: 'DELETE',
           });
           if (!response.ok) {

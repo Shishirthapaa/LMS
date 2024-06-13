@@ -100,7 +100,7 @@ const Topbar = () => {
                 data.instructorId = sessionStorage.getItem('instructorId');
                 data.instructorEmail = sessionStorage.getItem('instructorEmail');
             }
-            axios.put('http://localhost:3001/changepassword', data)
+            axios.put('https://lms-api-cyan.vercel.app/changepassword', data)
             .then(response => {
                 console.log('Response:', response.data);
                 alert('Password updated successfully');
@@ -121,7 +121,7 @@ const Topbar = () => {
 };
 const fetchNotice = async () =>{
     try{
-        const response = await fetch(`http://localhost:3001/notices/notifications`);
+        const response = await fetch(`https://lms-api-cyan.vercel.app/notices/notifications`);
         if (!response.ok){
             throw new Error('Failed to fetch Notice');
         } 

@@ -79,6 +79,12 @@ app.use('/courses', EditandDeleteNotification);
 app.use('/notices', FetchNotice);
 app.use('/lms', FetchMessage);
 
+const corsOptions = {
+  origin: 'https://educonnect-by-shishir.vercel.app',
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
+
 
 const uri = process.env.MONGODB_URI;
 
@@ -304,6 +310,12 @@ app.get('/staticbooks', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
-app.listen(3001, () =>{
-    console.log("server is running")
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () =>{
+    console.log(`server is running on port ${PORT}`);
+});
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
 });

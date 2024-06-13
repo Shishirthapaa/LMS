@@ -19,7 +19,7 @@ function InstCourseAccordion() {
 
   const fetchFolders = async (courseId) => {
     try {
-      const response = await axios.get(`http://localhost:3001/courses/${courseId}/folders`);
+      const response = await axios.get(`https://lms-api-cyan.vercel.app/courses/${courseId}/folders`);
       if (response.status === 200) {
         setFolders(response.data);
       } else {
@@ -37,7 +37,7 @@ function InstCourseAccordion() {
       Array.from(files).forEach((file) => {
         formData.append('files', file);
       });
-      const response = await axios.post(`http://localhost:3001/courses/folders/${folderId}/upload`, formData,{
+      const response = await axios.post(`https://lms-api-cyan.vercel.app/courses/folders/${folderId}/upload`, formData,{
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -64,7 +64,7 @@ function InstCourseAccordion() {
   };
   const handleEditFolder = async () => {
     try {
-      const response = await axios.put(`http://localhost:3001/courses/folders/${selectedFolder._id}`, {
+      const response = await axios.put(`https://lms-api-cyan.vercel.app/courses/folders/${selectedFolder._id}`, {
         folderName: selectedFolder.name 
       });
       
@@ -85,7 +85,7 @@ function InstCourseAccordion() {
 
   const handleDeleteFolder = async () => {
     try {
-      const response = await axios.delete(`http://localhost:3001/courses/folders/${selectedFolder._id}`);
+      const response = await axios.delete(`https://lms-api-cyan.vercel.app/courses/folders/${selectedFolder._id}`);
       
       if (response.status === 200) {
         setFolderDeleteModal(false);

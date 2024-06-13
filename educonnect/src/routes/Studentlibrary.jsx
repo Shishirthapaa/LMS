@@ -32,7 +32,7 @@ function Studentlibrary(){
     useEffect(() => {
         const fetchStaticBooks = async () => {
             try {
-                const response = await axios.get('http://localhost:3001/staticbooks');
+                const response = await axios.get('https://lms-api-cyan.vercel.app/staticbooks');
                 setStaticBooks(response.data);
             } catch (error) {
                 console.error('Error fetching static books:', error);
@@ -45,7 +45,7 @@ function Studentlibrary(){
   
     const handleSearch = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/searchbooks?query=${searchQuery}`);
+        const response = await axios.get(`https://lms-api-cyan.vercel.app/searchbooks?query=${searchQuery}`);
         if (!response.data) {
             throw new Error('No data received from the server');
           }

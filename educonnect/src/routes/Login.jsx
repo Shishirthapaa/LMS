@@ -24,7 +24,7 @@ const Login=()=>{
           }
         //console.log(email, pass, userType);
         //console.log('Selected UserType:',userType);
-        axios.post('http://localhost:3001/login', {email, password, userType})
+        axios.post('https://lms-api-cyan.vercel.app/login', {email, password, userType})
         .then(result => {
             console.log('Login result:',result);
 

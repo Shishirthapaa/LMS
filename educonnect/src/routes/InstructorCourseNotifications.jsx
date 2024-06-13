@@ -25,7 +25,7 @@ function InstructorCourseNotifications(){
 
     const fetchCourseDetails = async (courseId) => {
         try {
-            const response = await fetch(`http://localhost:3001/courses/addcourses/${courseId}`);
+            const response = await fetch(`https://lms-api-cyan.vercel.app/courses/addcourses/${courseId}`);
             if (!response.ok) {
                 throw new Error('Failed to fetch course details');
             }
@@ -59,7 +59,7 @@ function InstructorCourseNotifications(){
             console.log('Notification Description:', notificationDescription);
             console.log('Notification Date:', notificationDate);
 
-            await axios.post(`http://localhost:3001/courses/${_id}/notifications`, {notificationDescription, notificationDate, notificationTeacher});
+            await axios.post(`https://lms-api-cyan.vercel.app/courses/${_id}/notifications`, {notificationDescription, notificationDate, notificationTeacher});
             alert('Notification created Successfully!');
             handleClosecreateNotificationModal()
             setErrors("");

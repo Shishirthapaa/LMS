@@ -24,7 +24,7 @@ function StdAssignment  () {
 
   const fetchAssignments = async (courseId) => {
     try {
-      const response = await axios.get(`http://localhost:3001/courses/${courseId}/assignments`);
+      const response = await axios.get(`https://lms-api-cyan.vercel.app/courses/${courseId}/assignments`);
       if (response.status === 200) {
         setAssignments(response.data);
         const initialSubmisssionStatus = {}; 
@@ -60,7 +60,7 @@ function StdAssignment  () {
         formData.append('isSubmitted', true);
         formData.append('courseId', courseId);
 
-        const response = await axios.post(`http://localhost:3001/assignment/submission`, formData, {
+        const response = await axios.post(`https://lms-api-cyan.vercel.app/assignment/submission`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
@@ -84,7 +84,7 @@ const fetchSubmissionStatus = async (assignmentId) => {
     try { 
     
         const studentId = sessionStorage.getItem('studentId');
-        const response = await axios.get(`http://localhost:3001/assignment/submissionstatus/${assignmentId}/${studentId}`);
+        const response = await axios.get(`https://lms-api-cyan.vercel.app/assignment/submissionstatus/${assignmentId}/${studentId}`);
         if (response.status === 200) {
             setSubmissionStatus(prevState => ({
                 ...prevState,

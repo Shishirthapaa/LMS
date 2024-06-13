@@ -24,7 +24,7 @@ const AdminInstructor =()=> {
     },[]);
     const fetchInstructors = async () =>{
         try{
-            const response = await fetch('http://localhost:3001/instructors/addinstructors');
+            const response = await fetch('https://lms-api-cyan.vercel.app/instructors/addinstructors');
             if(!response.ok){
                 throw new Error('Failed to fetch instructors.');
             }
@@ -84,7 +84,7 @@ const AdminInstructor =()=> {
             return;
         }
         try {
-            const response = await fetch('http://localhost:3001/instructors/addinstructors', {
+            const response = await fetch('https://lms-api-cyan.vercel.app/instructors/addinstructors', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -123,7 +123,7 @@ const AdminInstructor =()=> {
             setError('Selected instructor does not have a valid ID');
             return;
         } 
-          const response = await fetch(`http://localhost:3001/instructors/editinstructors/${selectedInstructor._id}`, {
+          const response = await fetch(`https://lms-api-cyan.vercel.app/instructors/editinstructors/${selectedInstructor._id}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
@@ -153,7 +153,7 @@ const AdminInstructor =()=> {
     
       const handleDeleteInstructor = async () => {
         try {
-          const response = await fetch(`http://localhost:3001/instructors/deleteinstructors/${selectedInstructor._id}`, {
+          const response = await fetch(`https://lms-api-cyan.vercel.app/instructors/deleteinstructors/${selectedInstructor._id}`, {
             method: 'DELETE',
           });
           if (!response.ok) {
