@@ -47,6 +47,13 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.use(cors({
+  origin: 'https://educonnect-by-shishir.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
+app.options('*', cors());
 app.use('/courses', addcourseRouter);
 app.use('/courses', editcourseRouter);
 app.use('/courses', deletecourseRouter);
@@ -81,11 +88,6 @@ app.use('/courses', EditandDeleteNotification);
 app.use('/notices', FetchNotice);
 app.use('/lms', FetchMessage);
 
-app.use(cors({
-  origin: 'https://educonnect-by-shishir.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-}));
 
 
 const uri = process.env.MONGODB_URI;
@@ -317,7 +319,7 @@ app.listen(PORT, () =>{
     console.log(`server is running on port ${PORT}`);
 });
 
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send('Something broke!');
+app.use((req, res, next) => {
+  console.log('Request from origin:', req.headers.origin);
+  next();
 });
